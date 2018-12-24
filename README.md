@@ -1,10 +1,10 @@
 ## Glowing Pixels
-Main webpage
+
 * Maintainer and Architect.
    * ``Ritankar Paul``
    * ``Kripa Sindhu Bairagi``
    
-* Email Id
+* Email:
    * ``ritankarpaul47@gmail.com``
    * ``kripabairagi0047@gmail.com``
 
@@ -16,18 +16,18 @@ Main webpage
 5. Before merging current maintainer will check all changes and can accept/reject the pull request.
 7. After merging to ``master`` it may or may not be available in real website
 
-* For Local Setup:*
+*For Local Setup:*
 
 ```
 git clone https://github.com/GlowingPixels/GlowingPixelWeb.git
-cd kgecweb
+cd GlowingPixelWeb
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver 
 ```
 
-*Basic git guideline:*
+*Basic git guidelines:*
 ```
 git checkout -b [branch_name]
 git add --all
