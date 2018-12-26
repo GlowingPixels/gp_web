@@ -25,7 +25,7 @@ class Gallery(models.Model):
 
     tag = models.ForeignKey(ImageCategory, default=0, on_delete=models.CASCADE)
     contributor = models.CharField(max_length=100, default="Anonymous")
-    image = StdImageField(upload_to='gallery/image/', variations={'thumbnail':(1280, 720, True)}, blank=True)
+    image = StdImageField(upload_to='images/', variations={'thumbnail': (1310, 2330, True)}, blank=True)
     label = models.CharField(max_length=100, default="Image")
     descriptions = models.CharField(max_length=500, blank=True)
     date = models.DateTimeField(default=datetime.now, blank=True)
@@ -38,4 +38,4 @@ class Gallery(models.Model):
         verbose_name_plural = "Image Gallery"
 
     def __str__(self):
-        return "Image"+str(self.tag)
+        return "Image" + str(self.tag)

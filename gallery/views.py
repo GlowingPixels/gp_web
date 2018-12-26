@@ -2,16 +2,25 @@
 from django.shortcuts import render
 from .models import Gallery
 
-
-def gallery(req, category):
+def gallery(req, category=None):
     """
     Default view that renders all the images
     in a category
     """
-
-    images = {'images': Gallery.objects.filter(tag=category)}
+    if(category):
+        images = Gallery.objects.filter(tag=category)
+        context = {
+            'images': images,
+            'category': category,
+            }
+        return render(req, 'category/category.html', context=context)
+    else:
+        context = {
+            'images': Gallery.objects.all()
+            }
+        return render(req, 'homepage/homepage.html', context=context)
   
-    return render(req, 'gallery/gallery.html', images)
+    
 
 def gallery360(req, category):
     """
