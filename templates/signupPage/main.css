@@ -1,0 +1,49 @@
+body    {
+    background-image: url(../StaticPhotos/signup.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+html    {
+    height: 100%;
+}
+
+.formbody   {
+    border: 15px solid white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px 3% 20px 3%;
+}
+
+.container  {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height: 398px;
+}
+
+.d1 {
+    margin-top: 10px;
+}
+
+.dig    {
+    padding-top: 25px;
+    color: rgb(119, 218, 119);
+    font-size: 15px;
+}
+
+#op   {
+    margin-top: 20px;
+}
+
+.lk:hover   {
+    color: #87919b;
+}
+
+#blr    {
+    filter: blur(5px);
+}

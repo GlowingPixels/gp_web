@@ -1,0 +1,116 @@
+/* html */
+
+html    {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+/* thumbnail */
+
+.container  {
+    margin-top: 100px;
+}
+
+.img-thumbnail   {
+    padding: 0;
+    border: 0;
+}
+
+.sdo    {
+    filter: blur(0) brightness(100%);
+    transition: 500ms;
+}
+
+.hiddeneffect:hover .sdo    {
+    filter: blur(1px) brightness(80%);
+    transition: filter 500ms;
+    transform: scale(1.01);
+}
+
+/*stuff on thumbnail */
+
+.stuffImgTitle  {
+    position: absolute;
+    top: 8px;
+    left: 26px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.stuffEnlarge  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    padding: 10px 30px;
+    color: rgba(255, 255, 255, 0.80);
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 5px;
+    opacity: 0;
+    transition: 500ms;
+}
+
+.hiddeneffect:hover .stuffEnlarge {
+    opacity: 1;
+    transition: 500ms;
+}
+
+.stuffImgBy {
+    position: absolute;
+    bottom: 30px;
+    left: 26px;
+    color: white;
+    font-size: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.stuffPublished {
+    position: absolute;
+    bottom: 30px;
+    right: 26px;
+    color: white;
+    font-size: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*
+
+
+#ti     {
+    visibility: hidden;
+}
+
+#trm:hover  #ti    {
+    visibility: visible;
+}
+
+*/
+/* bottomBar */
+
+.bodyBottom {
+    padding: 20px 3% 10px 3%;
+    background: #263238;
+    color: #546E7A;
+    border-top: 1px rgb(197, 194, 194) solid;
+}
+
+.lk   {
+    color: #9e9e9e;
+    padding: 0;
+    display: inline;
+}
+
+.lk:hover   {
+    color: #87919b;
+}
+
+#endB   {
+    display: inline-block;
+    margin: 0;
+    font-size: 80%;
+    width: 100%;
+}

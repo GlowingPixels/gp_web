@@ -1,0 +1,34 @@
+body    {
+    background-image: url(../StaticPhotos/login3.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+html    {
+    height: 100%;
+}
+
+.formbody   {
+    border: 15px solid white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px 3% 20px 3%;
+}
+
+
+.dig    {
+    padding-top: 30px;
+    color: rgb(40, 167, 40);
+    font-size: 15px;
+}
+
+.container  {
+    max-height: 396px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
