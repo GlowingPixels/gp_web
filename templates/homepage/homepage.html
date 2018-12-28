@@ -4,9 +4,6 @@
     Glowing Pixels
 {% endblock %}
 
-{% block style %}
-    <link href="{% static "css/homepage.css" %}" rel="stylesheet">
-{% endblock %}
 
 {% block content %}
 <link href="{% static "css/homepage.css" %}" rel="stylesheet">
@@ -16,16 +13,15 @@
 
             {% for img in images %}
                 <div class="col-lg-4 col-sm-6 hiddeneffect">
-                    <a href="{{ img.image.url }}">
+                    <a href="">
                         <img src="{{ img.image.thumbnail.url }}" class="img-thumbnail sdo" style="margin-bottom: 20px;">
                     </a>
-
                     <!--stuff on thumbnails-->
                     <div class="stuffImgTitle">
                         {{ img.label }}
                     </div>
 
-                    <a href="#">
+                    <a href="{{ img.image.url }}">
                         <div class="stuffEnlarge">
                             <i class="fas fa-expand"></i>
                         </div>
