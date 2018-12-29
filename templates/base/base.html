@@ -32,12 +32,16 @@
 
                 <!-- cat dropdown-->
                 <div class="dropdown">
-                        <button class="dropbtn">Category</button>
-                        <div class="dropdown-content">
-                          <a href="#">Mountains</a>
-                          <a href="#">Abstruct</a>
-                          <a href="#">Dogs</a>
-                        </div>
+                    <a class="dropbtn" id="col">Category 
+                        <sub>
+                            <i class="fas fa-angle-down"></i>
+                        </sub>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#">Mountains</a>
+                        <a href="#">Abstruct</a>
+                        <a href="#">Dogs</a>
+                    </div>
                 </div>
 
                 <ul class="navbar-nav mr-auto">
@@ -104,5 +108,6 @@
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="{% static "js/homepage.js" %}"></script>
     </body>
 </html>

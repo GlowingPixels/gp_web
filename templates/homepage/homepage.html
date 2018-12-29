@@ -1,42 +1,136 @@
-{% extends "base/base.html" %}
-{% load staticfiles %}
-{% block title %}
-    Glowing Pixels
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GlowingPixels</title>
 
+        <!--tabIcon-->
+        <link rel="icon" href="../StaticPhotos/icon.png" type="image/x-icon">
+        <!--bootstrap CDNs-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!--fontawasome CDNs-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <!--googleFonts CDNs-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Jua" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <!--css links-->
+        <link rel="stylesheet" href="../navCss/main.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="../frontPage/index.html"><span class="fas fa-cannabis" style="padding-right: 10px"></span><strong>GlowingPixels</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-{% block content %}
-<link href="{% static "css/homepage.css" %}" rel="stylesheet">
+                <!-- cat dropdown-->
+                <div class="dropdown">
+                        <a class="dropbtn" id="col">Category 
+                            <sub>
+                                <i class="fas fa-angle-down"></i>
+                            </sub>
+                        </a>
+                        <div class="dropdown-content">
+                          <a href="#">Mountains</a>
+                          <a href="#">Abstruct</a>
+                          <a href="#">Dogs</a>
+                        </div>
+                </div>
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../loginPage/index.html">LogIn <span class="fas fa-user"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../signupPage/index.html">SignUp <span class="fas fa-user-plus"></span></a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </nav>
+
         <!--thumbnails-->
         <div class="container">
             <div class="row">
-
-            {% for img in images %}
                 <div class="col-lg-4 col-sm-6 hiddeneffect">
-                    <a href="">
-                        <img src="{{ img.image.thumbnail.url }}" class="img-thumbnail sdo" style="margin-bottom: 20px;">
+                    <a href="../frontPage/grid1/index.html">
+                        <img src="../Photos/9.jpg" class="img-thumbnail sdo" style="margin-bottom: 20px;">
                     </a>
+
                     <!--stuff on thumbnails-->
                     <div class="stuffImgTitle">
-                        {{ img.label }}
+                        DEAD FLOWER
                     </div>
 
-                    <a href="{{ img.image.url }}">
-                        <div class="stuffEnlarge">
-                            <i class="fas fa-expand"></i>
-                        </div>
+                    <a class="stuffEnlarge" href="#">
+                        <i class="fas fa-expand"></i>
                     </a>
 
                     <div class="stuffImgBy">
-                        By {{ img.contributor }}
+                        By Kripa Sindhu Bairagi
                     </div>
 
                     <div class="stuffPublished">
-                        Published on {{ img.date }}
+                        Published April 22, 2018
                     </div>
                 </div>
-            {% endfor %}
-            </div>
+            </div>           
         </div>
 
-{% endblock %}
+        <!--this div zooms on clicking on img card-->
+
+        <div class="zoom" id="ad">
+                <img src="../Photos/bback.jpg" class="img-thumbnail">
+        </div>
+
+        <!--bottonBar-->
+        <footer>
+            <div class="bodyBottom">   
+                <div id="endB">
+                    <span id="sp1">
+                        <span>Clicked with</span>
+                        <i class="fas fa-heart"></i>
+                        <span>and</span>
+                        <i class="fas fa-camera"></i>
+                    </span>
+                    <span style="float: right;">
+                        <span id="sp2">
+                            <span>2018 </span>
+                            <i class="far fa-copyright"></i>
+                            <span>glowingpixels.com</span>
+                        </span>
+                        <span id="sp4">
+                            <a href="#" class="lk">Terms</a>
+                            <span>and</span>
+                            <a href="#" class="lk">Privacy</a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </footer>
+        
+        <!--js CDNs-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="MyScript.js"></script>
+    </body>
+</html>
