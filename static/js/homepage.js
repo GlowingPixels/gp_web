@@ -1,5 +1,10 @@
 //code for on click zoom function
 
-$(".stuffEnlarge").click(function(){
-    $("#ad").addClass("showZoom");
-});
+var card =  document.querySelector(".stuffEnlarge");
+
+for(var i=0; i<6; i++)  {
+    card.addEventListener("click", function(){
+        this.classList.add('showZoom');
+    });
+}
+

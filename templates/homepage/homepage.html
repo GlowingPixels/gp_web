@@ -46,13 +46,8 @@
 
         {% for img in images %}
             <div class="zoom" id="ad{{ img.id }}">
-                    <img src="{{ img.image.url }}" class="img-thumbnail">
+                    <img src="{{ img.image.url }}" class="imgProperty">
             </div>
-            <script>
-             $(".stuffEnlarge").click(()=>{
-                 $("#ad{{ img.id }}").addClass("showZoom");
-                });
-            </script>
         {% endfor %}
   
       
