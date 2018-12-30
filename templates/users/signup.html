@@ -1,0 +1,73 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}
+    Sign Up|Glowing Pixels
+{% endblock %}
+
+{% block content %}
+{% load widget_tweaks %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" %}
+
+    <!--form-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="formbody">
+                
+                {% if registered %}
+                {% else %}
+                    <kbd style="font-size: 50px"> Sign Up Now!</kbd><br><br>
+                    <form enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        
+                        {% comment %} <div class="row">
+                            <div class="col"> {% endcomment %}
+                            {% for field in user_form %}
+                                <h6>{{ field.label_tag }}</h6>
+                                <small style="color:red;">{{ field.errors }}</small>
+                                {% render_field field class="form-control" %}
+                                <small>{{ field.help_text }}</small>
+                            {% endfor %}
+                            {% comment %} </div>
+                        </div> {% endcomment %}
+
+                        <div class="row d1">
+                            <div class="col">
+                            {% for field in profile_form %}
+                                
+                                {{ field.label_tag }}
+                                <small style="color:rbg(100,50,50)">{{ field.errors }}</small>
+                                {% render_field field class="form-control" %}
+                                <small>{{ field.help_text }}</small>
+                                
+                            {% endfor %}
+                            <div>
+                        </div>
+                        <div id="op">
+                            <input type="checkbox" name="read" value="didRead" required> Read the 
+                            <a href="#" class="lk">Terms and Conditions</a>
+                        </div>
+
+                        <div class="d1">
+                              <input type="submit" class="btn btn-default" value="Sign Up">
+                        </div>
+
+
+                    </form>
+
+                   
+
+                    <p class="dig"><strong>Already have an account ?</strong></p>
+
+                    <div>
+                        <a href="{% url 'users:login' %}" class="btn btn-primary">Login</a>
+                    </div>
+                 
+                 {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

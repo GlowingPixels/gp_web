@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'gallery',
     'stdimage',
     'users',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

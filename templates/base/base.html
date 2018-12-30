@@ -51,10 +51,10 @@
                 <form class="form-inline my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../loginPage/index.html">LogIn <span class="fas fa-user"></span></a>
+                            <a class="nav-link" href="{% url 'users:login' %}">LogIn <span class="fas fa-user"></span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../signupPage/index.html">SignUp <span class="fas fa-user-plus"></span></a>
+                            <a class="nav-link" href="{% url 'users:signup' %}">SignUp <span class="fas fa-user-plus"></span></a>
                         </li>
                     </ul>
                 </form>
@@ -72,7 +72,7 @@
 
 
         <!--bottonBar-->
-        <footer>
+        <footer style=" bottom: 0px; ">
             <div class="bodyBottom">   
                 <div id="endB">
                     <span id="sp1">

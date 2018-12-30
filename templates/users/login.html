@@ -1,12 +1,12 @@
 {% extends "base/base.html" %}
+{% load staticfiles %}
 
 {% block title %}
     Login|Glowing Pixels
 {% endblock %}
 
 {% block content  %}
-{% load staticfiles %}
-{% static 'css/login.html' %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
@@ -14,21 +14,22 @@
                         <form method="post">
                             {% csrf_token %}    
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                <label for="username">Username</label>
+                                <input type="" class="form-control" id="username" placeholder="Enter Username" required>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                                <label for="pass">Password</label>
+                                <input type="password" class="form-control" id="pass" placeholder="Password" required>
                             </div>
                             <div>
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </div>
                         </form>
-                        <p class="dig"><strong>New on GlowingPixels !</strong></p>
+                        <p class="dig"><strong>New on GlowingPixels ?</strong></p>
                     <div>
-                    <a href="../signupPage/index.html">
-                        <button type="submit" class="btn btn-primary">Create Account</button>
+
+                    <a href="{% url 'users:signup' %}">
+                        <button type="submit" class="btn btn-primary">Create an Account</button>
                     </a>
                 </div>
             </div>

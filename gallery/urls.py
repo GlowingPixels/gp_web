@@ -2,6 +2,7 @@
 from . import views
 from django.urls import path
 
+app_name = 'gallery'
 
 urlpatterns = [
     path('', views.gallery, name='homepage'),

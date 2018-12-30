@@ -10,6 +10,6 @@ class UserProfile(models.Model):
                                 variations={
                                      'thumbnail': (150, 150, True)
                                      },
-                                blank=True)
+                                blank=True)    
     def __str__(self):
         return self.user.first_name + " Username: " + self.user.username

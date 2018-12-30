@@ -28,7 +28,7 @@ class Gallery(models.Model):
     image = StdImageField(upload_to='images/', variations={'thumbnail': (786, 1048, True)}, blank=True)
     label = models.CharField(max_length=100, default="Image")
     descriptions = models.CharField(max_length=500, blank=True)
-    date = models.DateTimeField(default=datetime.now, blank=True)
+    date = models.DateField(auto_now=True)
     is_360 = models.BooleanField(default=False)
     image_360Link = models.URLField(max_length=500, blank=True)
 

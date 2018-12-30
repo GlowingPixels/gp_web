@@ -19,11 +19,11 @@ from django.conf.urls.static import static
 from django.contrib.auth import views
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth import urls as auth_urls
 from gallery.views import gallery
 
 urlpatterns = [
-    path('', gallery, name='homepage'),
-    # path('auth/', include('auth_urls')),
     path('admin/', admin.site.urls),
+    path('', include('gallery.urls', namespace='gallery')),
+    path('users/', include('users.urls', namespace='users')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

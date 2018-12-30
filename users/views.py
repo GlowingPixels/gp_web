@@ -16,6 +16,7 @@ def user_signup(req):
         profile_form = UserProfileForm(data=req.POST)
 
         if(user_form.is_valid() and profile_form.is_valid()):
+
             user = user_form.save()
             user.set_password(user.password)
             user.save()
@@ -28,6 +29,12 @@ def user_signup(req):
             
             profile.save()
             registered = True
+            username = req.POST['username']
+            password = req.POST['password']
+            #authenticate user then login
+            user = authenticate(username=username, password=password)
+            login(req, user)
+
 
         else:
             print (user_form.errors, profile_form.errors)
@@ -36,7 +43,7 @@ def user_signup(req):
         user_form = UserForm()
         profile_form = UserProfileForm()
 
-    return (req, 'registration/signup.html', {
+    return render(req, 'users/signup.html', {
         "registered": registered,
         "user_form": user_form,
         "profile_form": profile_form,
