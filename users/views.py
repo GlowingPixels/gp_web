@@ -34,10 +34,11 @@ def user_signup(req):
             #authenticate user then login
             user = authenticate(username=username, password=password)
             login(req, user)
+            return HttpResponseRedirect(reverse('gallery:homepage'))
 
 
         else:
-            print (user_form.errors, profile_form.errors)
+            print(user_form.errors, profile_form.errors)
     
     else:
         user_form = UserForm()
@@ -50,18 +51,17 @@ def user_signup(req):
     })
 
 def user_login(req):
+   
     if(req.method == "POST"):
+
         username = req.POST.get('username')
         password = req.POST.get('password')
 
         user = authenticate(username=username, password=password)
 
         if user:
-            if(user.is_active):
-                login(req, user)
-                return HttpResponseRedirect(reverse('homepage'))
-            else:
-                return HttpResponse("Account Deactivated")
+            login(req, user)
+            return HttpResponseRedirect(reverse('gallery:homepage'))
         else:
             return render(req, 'users/login.html', {
                 'failed': True
@@ -74,11 +74,11 @@ def user_login(req):
 @login_required
 def user_logout(req):
     logout(req)
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('gallery:homepage'))
 
 @login_required
 def user_info(req):
     user_data = req.user
-    return render(req, 'users/user_info.html', {
-        'user_data':user_data
+    return render(req, 'users/info.html', {
+        'user_data': user_data
         })
