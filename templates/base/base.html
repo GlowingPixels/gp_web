@@ -8,8 +8,7 @@
         <!--tabIcon-->
         <link rel="icon" href="{% static "images/icon.png" %}" type="image/x-icon">
         <!--bootstrap CDNs-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <!--fontawasome CDNs-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -19,12 +18,12 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <!--css links-->
-        <link rel="stylesheet" href="{% static "css/base.css" %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
         <!-- nav bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="../frontPage/index.html"><span class="fas fa-cannabis" style="padding-right: 10px"></span><strong>GlowingPixels</strong></a>
+            <a class="navbar-brand" href="{% url 'gallery:homepage' %}"><span class="fas fa-cannabis" style="padding-right: 10px"></span><strong>GlowingPixels</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,7 +75,7 @@
 
 
         <!--bottonBar-->
-        <footer style=" bottom: 0px; ">
+        <footer">
             <div class="bodyBottom">   
                 <div id="endB">
                     <span id="sp1">
@@ -102,12 +101,9 @@
         </footer>
         
         <!--js CDNs-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="{% static "js/homepage.js" %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
     </body>
 </html>
