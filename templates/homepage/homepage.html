@@ -25,7 +25,7 @@
                         {{ img.label }}
                     </div>
 
-                    <a class="stuffEnlarge" href="#">
+                    <a class="stuffEnlarge" href="#" id="expnd{{ img.id }}">
                         <i class="fas fa-expand"></i>
                     </a>
 
@@ -43,18 +43,20 @@
         </div>
 
         <!--this div zooms on clicking on img card-->
-
+        {% block scripts %}
+        {{ block.super }}
         {% for img in images %}
             <div class="zoom" id="ad{{ img.id }}">
                     <img src="{{ img.image.url }}" class="img-thumbnail">
             </div>
             <script>
-             $(".stuffEnlarge").click(()=>{
+             $("#expnd{{ img.id }}").click(()=>{
                  $("#ad{{ img.id }}").addClass("showZoom");
                 });
             </script>
         {% endfor %}
-  
+
+        {% endblock %}
       
 
     {% endblock %}
