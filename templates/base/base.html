@@ -52,14 +52,25 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'users:login' %}">LOGIN <span class="fas fa-user"></span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'users:signup' %}">SIGNUP <span class="fas fa-user-plus"></span></a>
-                        </li>
-                    </ul>
+                    {% if user.is_authenticated %}
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:logout' %}">LOGOUT <span class="fas fa-user-times"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:profile' %}">Profile <span class="fas fa-user-circle"></span></a>
+                            </li>                        
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:login' %}">LOGIN <span class="fas fa-user"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'users:signup' %}">SIGNUP <span class="fas fa-user-plus"></span></a>
+                            </li>
+                        </ul>
+                    {% endif %}
                 </form>
             </div>
         </nav>
