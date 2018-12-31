@@ -53,6 +53,7 @@ body{
     opacity: 0;
     transition: 500ms;
     filter: brightness(80%);
+    cursor: pointer;
 }
 
 .hiddeneffect:hover .stuffEnlarge {
@@ -89,25 +90,53 @@ body{
 /* div zoom */
 
 .zoom   {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     visibility: hidden;
     opacity: 0;
     transition: 200ms;
+    z-index: 4;
+}
 
+.overlay{
+    opacity:0.8;
+    background-color:rgba(27, 26, 26, 0.699);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index: 3;
+    display: none;
+}
+
+.overlay i{
+    font-size: 50px;
+    color: white;
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.overlay i:hover{
+    color: gray;
+    transition: 200ms;
+    cursor: pointer;
 }
 
 .showZoom   {
     visibility: visible;
     opacity: 1;
-    transition: 200ms;
+    transition: ease-in-out 200ms;
+    display: block;
 }
 
 .imgProperty    {
     max-width: 100%;
-    height: auto;
+    max-height: 70%;
+    border-radius: 5px;
 }
 
 /* bottomBar */

@@ -25,9 +25,9 @@
                         {{ img.label }}
                     </div>
 
-                    <a class="stuffEnlarge" href="#" id="expnd{{ img.id }}">
+                    <div class="stuffEnlarge" id="expnd{{ img.id }}">
                         <i class="fas fa-expand"></i>
-                    </a>
+                    </div>
 
                     <div class="stuffImgBy">
                         By {{ img.contributor }}
@@ -46,13 +46,19 @@
         {% block scripts %}
         {{ block.super }}
         {% for img in images %}
-            <div class="zoom" id="ad{{ img.id }}">
-                    <img src="{{ img.image.url }}" class="imgProperty">
+        <div id="" class="overlay ad{{ img.id }}">
+            <i class="fas fa-times close"></i>
+            <div class="zoom ad{{ img.id }}">
+                <img src="{{ img.image.url }}" class="imgProperty">
             </div>
+        </div>
             <script>
              $("#expnd{{ img.id }}").click(()=>{
-                 $("#ad{{ img.id }}").addClass("showZoom");
-                });
+                 $(".ad{{ img.id }}").addClass("showZoom");
+            });
+            $(".close").click(()=>{
+                $(".ad{{ img.id }}").removeClass("showZoom");
+            });
             </script>
         {% endfor %}
 

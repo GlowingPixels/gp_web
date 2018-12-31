@@ -36,16 +36,19 @@
 }
 
 .navbar {
-    box-shadow: 0 1px 6px #e0e0d1;
+    box-shadow: 0 1px 3px #e0e0d1;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     padding: 30px 16px;
     top: 0;
     position: fixed;
+    transition: 1000ms;
+    z-index: 2;
 }
 
-.navbar .expand {
-    top: 100px;
+.navbar-scroll  {
+    top: -120px;
+    transition: 700ms;
 }
 
 /* underline */
@@ -85,6 +88,7 @@
     background-color: white;
     outline: none;
     transition: 0.3s;
+    cursor: pointer;
   }
   
   .dropdown {
@@ -114,7 +118,7 @@
   }
   
   .dropdown-content a:hover {
-      background-color: #ddd;
+      background-color: rgb(243, 241, 241);
       color: #9e9e9e;
       transition: 0.3;
     }
