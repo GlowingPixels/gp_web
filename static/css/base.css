@@ -51,6 +51,14 @@
     transition: 700ms;
 }
 
+/* navbar-brand name */
+
+.textdeco   {
+    transition: 500ms;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 /* underline */
 
 @import url(https://fonts.googleapis.com/css?family=Quando);
