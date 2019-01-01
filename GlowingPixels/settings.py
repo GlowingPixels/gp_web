@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Login Redirection
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'gallery:homepage'
+LOGOUT_REDIRECT_URL = 'gallery:homepage'
 
 # Application definition
 
@@ -44,6 +49,8 @@ INSTALLED_APPS = [
     'users',
     'widget_tweaks',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -105,11 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# # Login Redirection
-
-# LOGIN_URL = 'login'
-# LOGOUT_URL = 'logout'
-# LOGIN_REDIRECT_URL = 'homepage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

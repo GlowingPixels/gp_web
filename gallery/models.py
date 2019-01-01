@@ -1,4 +1,9 @@
 
+#    from django.contrib.auth import get_user_model
+#    User = get_user_model()
+#    class Book(models.Model):
+#         author = models.ForeignKey(User)
+
 """
 A very basic Gallery App Model that has an image and its description with date
 """
