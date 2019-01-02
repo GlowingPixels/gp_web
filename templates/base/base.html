@@ -24,10 +24,9 @@
     <body>
         <!-- nav bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="{% url 'gallery:homepage' %}"><span class="fas fa-cannabis" style="padding-right: 10px"></span><strong id="colorchange" class="textdeco">
-                GLOWING PIXELS
+            <a class="navbar-brand" href="{% url 'gallery:homepage' %}"><span class="fas fa-cannabis" style="padding-right: 10px"></span><strong id="colorchange">
                 
-                <!-- <span class="textdeco" id="let1">G</span>
+                <span class="textdeco" id="let1">G</span>
                 <span class="textdeco" id="let2">L</span>
                 <span class="textdeco" id="let3">O</span>
                 <span class="textdeco" id="let4">W</span>
@@ -40,7 +39,7 @@
                 <span class="textdeco" id="let10">X</span>
                 <span class="textdeco" id="let11">E</span>
                 <span class="textdeco" id="let12">L</span>
-                <span class="textdeco" id="let13">S</span> -->
+                <span class="textdeco" id="let13">S</span>
             </strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,7 +48,7 @@
 
                 <!-- cat dropdown-->
                 <div class="dropdown">
-                    <a class="dropbtn" id="col">CATEGORY
+                    <a class="dropbtn" id="cato"><span id="underln">CATEGORY</span>
                         <sub>
                             <i class="fas fa-angle-down"></i>
                         </sub>
@@ -73,7 +72,7 @@
                     {% if user.is_authenticated %}
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'users:profile' %}" style="text-transform:uppercase;">{{ user.first_name }} <span class="fas fa-user-circle"></span></a>
+                                    <a class="nav-link" href="{% url 'users:profile' %}" style="text-transform:uppercase;">{{ user.first_name }} <span class="fas fa-user-secret"></span></a>
                             </li>  
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'users:logout' %}">LOGOUT <span class="fas fa-user-times"></span></a>

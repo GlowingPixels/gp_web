@@ -89,19 +89,7 @@ body{
 
 /* div zoom */
 
-.zoom   {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: hidden;
-    opacity: 0;
-    transition: 200ms;
-    z-index: 4;
-}
-
 .overlay{
-    opacity:0.8;
     background-color:rgba(27, 26, 26, 0.699);
     position:fixed;
     width:100%;
@@ -112,30 +100,28 @@ body{
     display: none;
 }
 
-.overlay i{
-    font-size: 50px;
-    color: white;
-    float: right;
-    margin-right: 100px;
-    margin-top: 50px;
-}
-
-.overlay i:hover{
-    color: gray;
+.zoom   {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
     transition: 200ms;
-    cursor: pointer;
+    z-index: 4;
 }
 
-.showZoom   {
+/* .showZoom   {
     visibility: visible;
     opacity: 1;
     transition: ease-in-out 200ms;
     display: block;
-}
+} */
 
 .imgProperty    {
+    width: auto;
     max-width: 100%;
-    max-height: 70%;
+    height: auto;
+    max-height: 986px;
     border-radius: 5px;
 }
 

@@ -46,18 +46,16 @@
         {% block scripts %}
         {{ block.super }}
         {% for img in images %}
-        <div id="" class="overlay ad{{ img.id }}">
-            <i class="fas fa-times close"></i>
+        <div class="overlay ad{{ img.id }}"></div>
             <div class="zoom ad{{ img.id }}">
                 <img src="{{ img.image.url }}" class="imgProperty">
             </div>
-        </div>
             <script>
              $("#expnd{{ img.id }}").click(()=>{
-                 $(".ad{{ img.id }}").addClass("showZoom");
+                 $(".ad{{ img.id }}").fadeIn();
             });
-            $(".close").click(()=>{
-                $(".ad{{ img.id }}").removeClass("showZoom");
+            $(".overlay").click(()=>{
+                $(".ad{{ img.id }}").fadeOut();
             });
             </script>
         {% endfor %}
