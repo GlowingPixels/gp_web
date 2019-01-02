@@ -75,13 +75,13 @@
                                     <a class="nav-link" href="{% url 'users:profile' %}" style="text-transform:uppercase;">{{ user.first_name }} <span class="fas fa-user-secret"></span></a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'users:logout' %}">LOGOUT <span class="fas fa-user-times"></span></a>
+                                <a class="nav-link" href="{% url 'logout' %}">LOGOUT <span class="fas fa-user-times"></span></a>
                             </li>                      
                         </ul>
                     {% else %}
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'users:login' %}">LOGIN <span class="fas fa-user"></span></a>
+                                <a class="nav-link" href="{% url 'login' %}">LOGIN <span class="fas fa-user"></span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'users:signup' %}">SIGNUP <span class="fas fa-user-plus"></span></a>

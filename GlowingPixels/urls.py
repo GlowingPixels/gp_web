@@ -24,6 +24,7 @@ from gallery.views import gallery
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('gallery.urls', namespace='gallery')),
-    path('users/', include('users.urls', namespace='users')),
+    path('accounts/', include('users.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
