@@ -1,6 +1,10 @@
 """A basic view for the Gallery App"""
-from django.shortcuts import render
+
+from django.shortcuts import render, redirect
+from django.views import View
 from .models import Gallery
+from .forms import ImageCreateForm
+from django.contrib.auth.decorators import login_required
 
 def gallery(req, category=None):
     """
@@ -13,12 +17,12 @@ def gallery(req, category=None):
             'images': images,
             'category': category,
             }
-        return render(req, 'category/category.html', context=context)
+        return render(req, 'gallery/category.html', context=context)
     else:
         context = {
             'images': Gallery.objects.all()
             }
-        return render(req, 'homepage/homepage.html', context=context)
+        return render(req, 'gallery/homepage.html', context=context)
   
     
 
@@ -29,3 +33,17 @@ def gallery360(req, category):
     image360 = {'images': Gallery.objects.filter(is_360=True).filter(tag=category)}
 
     return render(req, 'gallery/gallery360.html', image360)
+
+@login_required
+def create_image(request):
+    if request.method == 'POST':
+        form = ImageCreateForm(request.POST, request.FILES)
+        
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.contributor = request.user
+            instance.save()
+            return redirect('gallery:homepage')
+    else:
+        form = ImageCreateForm()
+        return render(request, 'gallery/imagecreate.html', {'form': form})

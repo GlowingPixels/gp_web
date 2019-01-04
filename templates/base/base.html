@@ -72,11 +72,15 @@
                     {% if user.is_authenticated %}
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
+                                <a class="nav-link" href="{% url 'gallery:createImage' %}">Contribute <span class="fas fa-images"></span></a>
+                            </li>   
+                            <li class="nav-item">
                                     <a class="nav-link" href="{% url 'users:profile' %}" style="text-transform:uppercase;">{{ user.first_name }} <span class="fas fa-user-secret"></span></a>
                             </li>  
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">LOGOUT <span class="fas fa-user-times"></span></a>
-                            </li>                      
+                            </li>
+                                                  
                         </ul>
                     {% else %}
                         <ul class="navbar-nav mr-auto">

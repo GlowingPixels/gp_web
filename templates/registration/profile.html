@@ -1,12 +1,16 @@
 {% extends 'base/base.html' %}
+{% load staticfiles %}
 {% block title %}User Profile{% endblock %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <div class="container">
+        <div class="row justify-content-center">
     {% if user.is_authenticated %}
-        ##TODO when user is logged in : do some stuff show user's info and stuffs
-        like username firstor last name or may display profile pic
-
+        <img src="{{user.profile_pic.url}}">
     {% else %}
-        #TODO if user is not logged IN
-    {% endif %}
+        <p>Nt auth</p>
 
+    {% endif %}
+</div>
+</div>
 {% endblock %}
