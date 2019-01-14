@@ -1,102 +1,89 @@
 {% load staticfiles %}
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>GlowingPixels</title>
-
         <!--tabIcon-->
         <link rel="icon" href="{% static "images/icon.png" %}" type="image/x-icon">
-        <!--bootstrap CDNs-->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <!--fontawasome CDNs-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
-        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <!--googleFonts CDNs-->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Jua" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-        <!--css links-->
+        <!-- fontAwasome CDNs -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- css file link -->
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <!-- nav bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="{% url 'gallery:homepage' %}"><span class="fas fa-cannabis" style="padding-right: 10px"></span><strong id="colorchange">
-                
-                <span class="textdeco" id="let1">G</span>
-                <span class="textdeco" id="let2">L</span>
-                <span class="textdeco" id="let3">O</span>
-                <span class="textdeco" id="let4">W</span>
-                <span class="textdeco" id="let5">I</span>
-                <span class="textdeco" id="let6">N</span>
-                <span class="textdeco" id="let7">G</span>
-                <span>&nbsp;</span>
-                <span class="textdeco" id="let8">P</span>
-                <span class="textdeco" id="let9">I</span>
-                <span class="textdeco" id="let10">X</span>
-                <span class="textdeco" id="let11">E</span>
-                <span class="textdeco" id="let12">L</span>
-                <span class="textdeco" id="let13">S</span>
-            </strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- navbar -->
+        <div class="navbar-u">
+            <!-- nav brand & logo -->
+            <div class="brand-u">
+                <a href="{% url 'gallery:homepage' %}" style="text-decoration:none">
+                    <i class="fas fa-spa" style="transition:50ms;"></i>
+                    <span class="brandName-u">
 
-                <!-- cat dropdown-->
-                <div class="dropdown">
-                    <a class="dropbtn" id="cato"><span id="underln">CATEGORY</span>
-                        <sub>
-                            <i class="fas fa-angle-down"></i>
-                        </sub>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="#">Mountains</a>
-                        <a href="#">Abstruct</a>
-                        <a href="#">Dogs</a>
-                    </div>
+                        <span class="textdeco-u" id="let1">G</span>
+                        <span class="textdeco-u" id="let2">L</span>
+                        <span class="textdeco-u" id="let3">O</span>
+                        <span class="textdeco-u" id="let4">W</span>
+                        <span class="textdeco-u" id="let5">I</span>
+                        <span class="textdeco-u" id="let6">N</span>
+                        <span class="textdeco-u" id="let7">G</span>
+                        <span>&nbsp;</span>
+                        <span class="textdeco-u" id="let8">P</span>
+                        <span class="textdeco-u" id="let9">I</span>
+                        <span class="textdeco-u" id="let10">X</span>
+                        <span class="textdeco-u" id="let11">E</span>
+                        <span class="textdeco-u" id="let12">L</span>
+                        <span class="textdeco-u" id="let13">S</span>
+
+                    </span>
+                </a>
+            </div>
+            <div class="bars-u">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- nav content -->
+            <div class="navContent-u">
+                <div class="navItem-u">
+                    <span class="dropdown-u">
+                        <a href="#" id="catbtn-u">CATEGORY</a>
+                        <div class="dropdownContent-u">
+                            <a href="#">Nudes</a>
+                            <a href="#">Teens</a>
+                            <a href="#">Pussy</a>
+                        </div>
+                    </span>
+                </div>
+                <div class="navItem-u">
+                    <a href="#">ABOUT US</a>
+                </div>
+                <div class="navItem-u">
+                    <a href="#">CONTACT</a>
                 </div>
 
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT US</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    {% if user.is_authenticated %}
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'gallery:createImage' %}">Contribute <span class="fas fa-images"></span></a>
-                            </li>   
-                            <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'users:profile' %}" style="text-transform:uppercase;">{{ user.first_name }} <span class="fas fa-user-secret"></span></a>
-                            </li>  
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'logout' %}">LOGOUT <span class="fas fa-user-times"></span></a>
-                            </li>
-                                                  
-                        </ul>
-                    {% else %}
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'login' %}">LOGIN <span class="fas fa-user"></span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'users:signup' %}">SIGNUP <span class="fas fa-user-plus"></span></a>
-                            </li>
-                        </ul>
-                    {% endif %}
-                </form>
+                <!-- client content -->
+                {% if user.is_authenticated %}
+                <div class="navItem-u">
+                    <a href="{% url 'logout' %}">LOGOUT</a>
+                </div>
+                <div class="navItem-u">
+                    <a href="{% url 'gallery:createImage' %}">Contribute</a>
+                </div>
+                <div class="navItem-u">
+                    <a href="{% url 'users:profile' %}">{{ user.first_name }}</a>
+                </div>
+                {% else %}
+                <div class="navItem-u">
+                    <a href="{% url 'login' %}">LOGIN</a>
+                </div>
+                <div class="navItem-u">
+                    <a href="{% url 'users:signup' %}">SIGNUP</a>
+                </div>
+                {% endif %}
             </div>
-        </nav>
+        </div>
 
-        
+     
     {% block content %}
 
 
@@ -104,9 +91,7 @@
 
     {% endblock %}
 
-
-
-        <!--bottonBar-->
+          <!--bottonBar-->
         <footer">
             <div class="bodyBottom">   
                 <div id="endB">
@@ -116,13 +101,13 @@
                         <span>and</span>
                         <i class="fas fa-camera"></i>
                     </span>
-                    <span style="float: right;">
+                    <span id="sp4">
                         <span id="sp2">
                             <span>2018 </span>
                             <i class="far fa-copyright"></i>
                             <span>glowingpixels.com</span>
                         </span>
-                        <span id="sp4">
+                        <span id="sp3">
                             <a href="#" class="lk">Terms</a>
                             <span>and</span>
                             <a href="#" class="lk">Privacy</a>
@@ -131,15 +116,16 @@
                 </div>
             </div>
         </footer>
-        
-        <!--js CDNs-->
-        {% block scripts %}
-        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- script&CDNs -->
+    {% block scripts %}
+        <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        ></script>
+        <!-- js file link -->
         <script src="{% static 'js/base.js' %}"></script>
-        
-        {% endblock %}
+        <script src="{% static 'js/homepage.js' %}"></script>
+    {% endblock %}
+
     </body>
 </html>

@@ -26,7 +26,7 @@ SECRET_KEY = '4ds84++szt8y!yg!+#nr-*+_n*yd*d)y%wl=(i_n9-g4*t(&7z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.103', '*']
 
 # Login Redirection
 LOGIN_URL = 'login'
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [

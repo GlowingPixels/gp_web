@@ -1,10 +1,24 @@
-//code for on click zoom function
+console.log("homepage.js connected");
 
-var card =  document.querySelector(".stuffEnlarge");
+// thumbanils hover effects
+$(".col-u").hover(
+    function() {
+      $(this).children('a').children('img').css("filter", "brightness(70%)");
+      $(this).children('.enlarge').children('.backLay').fadeIn();
+      $(this).css("bottom", "2px");
+    }, function() {
+      $(this).children('a').children('img').css("filter", "brightness(100%)");
+      $(this).children('.enlarge').children('.backLay').fadeOut();
+      $(this).css("bottom", "0");
+    }
+  );
 
-for(var i=0; i<6; i++)  {
-    card.addEventListener("click", function(){
-        this.classList.add('showZoom');
-    });
-}
+  // img zoom in-out code
+  $(".backLay").click(function() {
+      var id = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('id');
+      var src = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('src');
+      console.log(id);
+      console.log(src);
+      $('.zoomImg').children('img').attr('src', src);
 
+  });

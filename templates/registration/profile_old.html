@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block title %}User Profile{% endblock %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <div class="container">
+        <div class="row justify-content-center">
+    {% if user.is_authenticated %}
+        <img src="{{user.profile_pic.url}}">
+    {% else %}
+        <p>Nt auth</p>
+
+    {% endif %}
+</div>
+</div>
+{% endblock %}
