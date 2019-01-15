@@ -20,13 +20,13 @@
 
                     <img src="{{ img.image.thumbnail.url }}" alt="mountains" class="imgThumbnails" src_full="{{ img.image.url }}">
                     <div class="albumName">
-                        <a href="#">
+                        <a href="{% url 'gallery:gallery' img.tag %}">
                             <span class="onThumbnail">
-                                {{ img.label }}
+                                {{ img.tag }}
                             </span>
                         </a>
                     </div>
-
+                    
                     <div class="enlarge">
                         <div class="backLay onThumbnail">
                             <i class="fas fa-expand"></i>

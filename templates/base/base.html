@@ -48,9 +48,9 @@
                     <span class="dropdown-u">
                         <a href="#" id="catbtn-u">CATEGORY</a>
                         <div class="dropdownContent-u">
-                            <a href="#">Nudes</a>
-                            <a href="#">Teens</a>
-                            <a href="#">Pussy</a>
+                            {% for category in categories %}
+                                <a href="{% url 'gallery:gallery' category %}">{{ category }}</a>
+                            {% endfor %}
                         </div>
                     </span>
                 </div>
