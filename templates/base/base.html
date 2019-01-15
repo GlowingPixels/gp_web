@@ -10,7 +10,7 @@
         <!-- css file link -->
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </head>
     <body>
         <!-- navbar -->
@@ -63,14 +63,14 @@
 
                 <!-- client content -->
                 {% if user.is_authenticated %}
+                <!-- <div class="navItem-u">
+                    <a href="{% url 'gallery:createImage' %}">Contribute</a>
+                </div> -->
+                <div class="navItem-u" style="text-transform:uppercase;">
+                    <a href="{% url 'users:profile' %}">{{ user.first_name }}</a>
+                </div>
                 <div class="navItem-u">
                     <a href="{% url 'logout' %}">LOGOUT</a>
-                </div>
-                <div class="navItem-u">
-                    <a href="{% url 'gallery:createImage' %}">Contribute</a>
-                </div>
-                <div class="navItem-u">
-                    <a href="{% url 'users:profile' %}">{{ user.first_name }}</a>
                 </div>
                 {% else %}
                 <div class="navItem-u">
