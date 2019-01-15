@@ -47,3 +47,19 @@ $(document).ready(()=> {
 $(".dropdown-u").hover(()=>{
     $(".dropdownContent-u").fadeToggle();
 });
+
+//code only for phone
+if (window.matchMedia("(min-resolution: 192dpi)").matches) {
+    $(".bars-u").click(()=>{
+        var randcolor = randomcolor();
+        var time = 0;
+        for(var i=1; i<=13; i++){
+            var id = "#let" + String(i);
+            time = time +170;
+            $(id).css('transition',String(time) + "ms");
+            $(".fa-spa").css('color', String(randcolor));
+            $(id).css('color', String(randcolor));
+            // $(id).css({textShadow: String(randcolor) + " 0 0 3px"});
+        }
+    });
+}

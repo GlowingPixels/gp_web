@@ -16,14 +16,15 @@
                 <!-- img cards -->
                 <div class="col-u">
 
-                    <a href="#">
-                        <img src="{{ img.image.thumbnail.url }}" alt="mountains" class="imgThumbnails" id="it1">
-                    </a>
+                    
+                    <img src="{{ img.image.thumbnail.url }}" alt="mountains" class="imgThumbnails" id="it1">
 
                     <div class="albumName">
-                        <span class="onThumbnail">
-                        {{ img.label }}
-                        </span>
+                        <a href="#">
+                            <span class="onThumbnail">
+                                {{ img.label }}
+                            </span>
+                        </a>
                     </div>
 
                     <div class="enlarge">
@@ -33,9 +34,11 @@
                     </div>
 
                     <div class="postBy">
-                        <span class="onThumbnail">
-                        By {{ img.contributor }}
-                        </span>
+                        <a href="#">
+                            <span class="onThumbnail">
+                                By {{ img.contributor }}
+                            </span>
+                        </a>
                     </div>
 
                     <div class="publishedOn">
@@ -49,12 +52,11 @@
         </div>
 
         <!-- stuff after onClick zoom -->
-        {% for img in images %}
         <div class="overlay"></div>
         <div class="zoomImg">
             <img src="#" alt="image" class="imgProperty">
         </div>
-        {% endfor %}
+
     {% endblock %}
     
    {% block scripts %}

@@ -159,6 +159,23 @@ body, html {
     }
 
     #sp4    {
+        margin-top: 1%;
+        display: block;
+        float: none;
+    }
+}
+
+@media (min-resolution: 192dpi)   {
+    #endB   {
+        text-align: center;
+    }
+
+    #sp1   {
+        display: block;
+    }
+
+    #sp4    {
+        margin-top: 1%;
         display: block;
         float: none;
     }

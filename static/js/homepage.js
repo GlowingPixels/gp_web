@@ -3,11 +3,11 @@ console.log("homepage.js connected");
 // thumbanils hover effects
 $(".col-u").hover(
     function() {
-      $(this).children('a').children('img').css("filter", "brightness(70%)");
+      $(this).children('img').css("filter", "brightness(70%)");
       $(this).children('.enlarge').children('.backLay').fadeIn();
       $(this).css("bottom", "2px");
     }, function() {
-      $(this).children('a').children('img').css("filter", "brightness(100%)");
+      $(this).children('img').css("filter", "brightness(100%)");
       $(this).children('.enlarge').children('.backLay').fadeOut();
       $(this).css("bottom", "0");
     }
