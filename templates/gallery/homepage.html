@@ -7,7 +7,9 @@
 
 {% block content %}
     <link href="{% static "css/homepage.css" %}" rel="stylesheet">
-
+    {% if category %}
+        <p> Category : {{ category }} </p>
+    {% endif %}
         <div class="bag">
             <div class="row-u">
 
@@ -16,8 +18,8 @@
                 <!-- img cards -->
                 <div class="col-u">
 
-                    <a href="#">
-                        <img src="{{ img.image.thumbnail.url }}" alt="mountains" class="imgThumbnails" id="it1">
+                    <a href="{% url 'gallery:gallery' img.tag %}">
+                        <img src="{{ img.image.thumbnail.url }}" alt="mountains" class="imgThumbnails" src_full="{{ img.image.url }}">
                     </a>
 
                     <div class="albumName">
@@ -27,7 +29,7 @@
                     </div>
 
                     <div class="enlarge">
-                        <div class="backLay onThumbnail" id="ex{{ img.id }}">
+                        <div class="backLay onThumbnail">
                             <i class="fas fa-expand"></i>
                         </div>
                     </div>

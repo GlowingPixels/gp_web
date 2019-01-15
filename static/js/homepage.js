@@ -16,7 +16,7 @@ $(".col-u").hover(
   // img zoom in-out code
   $(".backLay").click(function() {
       var id = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('id');
-      var src = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('src');
+      var src = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('src_full');
       console.log(id);
       console.log(src);
       $('.zoomImg').children('img').attr('src', src);

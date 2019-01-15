@@ -4,7 +4,7 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
         <div class="profileContainer">
-            <img src="{{user.profile_pic.url}}" alt="Image" class="coverImg">
+            <img src="{{user.profile_pic.cover.url}}" alt="Image" class="coverImg">
             <img src="{{user.profile_pic.url}}" alt="Image" class="profilePicture">
             <div class="userDetails">
                 <div class="userDetailsStyle">

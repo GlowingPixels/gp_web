@@ -20,7 +20,7 @@ class ImageCategory(models.Model):
         verbose_name_plural = "Image Categories"
 
     def __str__(self):
-        return "Image Category: {}".format(str(self.category))
+        return str(self.category)
 
 class Gallery(models.Model):
     """ Main Class of Gallery that has a tag with descriptions and date"""
@@ -40,4 +40,4 @@ class Gallery(models.Model):
         verbose_name_plural = "Image Gallery"
 
     def __str__(self):
-        return "Image" + str(self.tag)
+        return "Image: " + str(self.tag)

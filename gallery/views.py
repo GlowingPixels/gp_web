@@ -11,18 +11,16 @@ def gallery(req, category=None):
     Default view that renders all the images
     in a category
     """
-    if(category):
+    if(category!=None):
         images = Gallery.objects.filter(tag=category)
-        context = {
+    else:
+        images = Gallery.objects.all()
+
+    context = {
             'images': images,
             'category': category,
             }
-        return render(req, 'gallery/category.html', context=context)
-    else:
-        context = {
-            'images': Gallery.objects.all()
-            }
-        return render(req, 'gallery/homepage.html', context=context)
+    return render(req, 'gallery/homepage.html', context=context)
   
     
 
