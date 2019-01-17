@@ -70,12 +70,25 @@ body, html {
     margin: 0 -3px;
 }
 
+.searchArea {
+    border: none;
+}
+
+.searchBar  {
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 10px;
+    margin-left: 5px;
+    outline: none;
+}
+
 /* hover effects */
 .navItem-u a:hover    {
     background-color: rgb(119, 117, 117);
     color: white;
     transition: 500ms;
 }
+
 
 /* for tablet mode */
 @media only screen and (max-width: 900px) {

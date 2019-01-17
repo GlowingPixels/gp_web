@@ -2,14 +2,25 @@
 {% load staticfiles %}
 {% block title %}User Profile{% endblock %}
 {% block content %}
+    <!-- css link -->
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <!-- HTML starts here -->
         <div class="profileContainer">
+            {% if profile_pic %}
+
             <img src="{{user.profile_pic.cover.url}}" alt="Image" class="coverImg">
-            <img src="{{user.profile_pic.url}}" alt="Image" class="profilePicture">
-            <div class="userDetails">
+            <!-- <img src="{{user.profile_pic.url}}" alt="Image" class="profilePicture"> -->
+            {% else %}
+            <div class="coverImgContainer">
+                <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="coverImg">
+            </div>
+            <!-- <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture"> -->
+            {% endif %}
+            <!-- <div class="userDetails">
                 <div class="userDetailsStyle">
                     {{ user.first_name }} {{ user.last_name }}
                 </div>
-            </div>
+            </div> -->
         </div>
+
 {% endblock %}

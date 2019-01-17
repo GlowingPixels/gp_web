@@ -3,24 +3,43 @@ body, html {
     margin: 0;
 }
 
+/* navbar resize only in profile pge */
+.navbar-u   {
+    padding: 10px 0;
+}
+
+.navContent-u   {
+    bottom: 15px;
+}
+
+/* profile css starts here */
 .profileContainer    {
     width: 100%;
     position: relative;
 }
 
-.coverImg   {
+.coverImgContainer  {
     width: 100%;
-    height: auto;
-    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.profilePicture {
+.coverImg   {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;   
+}
+
+/* .profilePicture {
     width: 20%;
     position: absolute;
     top: 70%;
     left: 15%;
     border: 2px solid white;
-}
+} */
 
 .userDetails    {
 
