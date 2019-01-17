@@ -41,8 +41,14 @@
             </div>
 
             <div class="navItem-u searchBar">
-                <input type="search" placeholder="Search" class="searchArea">
+                {% csrf_token %}
                 <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Search" id="search" class="searchArea">
+                    <ul id="search_results"></ul>
+                    
+                     <!--Do not change id="search" and id="search_results"
+                    the search results will be render as anchor tags inside any element that will have 
+                    id="search_results"-->
             </div>
 
             <div class="bars-u">
