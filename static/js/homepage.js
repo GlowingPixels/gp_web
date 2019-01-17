@@ -15,10 +15,28 @@ $(".col-u").hover(
 
   // img zoom in-out code
   $(".backLay").click(function() {
-      var id = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('id');
-      var src = $( this ).parent('.enlarge').siblings('a').children(".imgThumbnails").attr('src_full');
-      console.log(id);
-      console.log(src);
+      var src = $( this ).parent('.enlarge').siblings(".imgThumbnails").attr('src_full');
+      var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
       $('.zoomImg').children('img').attr('src', src);
-
+      $('.zoomImg').children('.afterZoomName').children('a').children('span').html(byName);
+      $('.zoomImg').fadeIn();
+      $(".overlay").fadeIn();
+      $('body').css('overflow', 'hidden');
+      console.log("clicked");
+      console.log(byName);
   });
+
+  $(".overlay").click(()=>{
+      $(".overlay").fadeOut();
+      $('.zoomImg').fadeOut();
+      $('body').css('overflow', 'visible');
+  });
+
+  //for phones  
+  if (window.matchMedia("(min-resolution: 192dpi)").matches) {
+    $(".col-u").each(()=>{
+      var fullsrc = $(this).children('.imgThumbnails').attr('src_full');
+      console.log(fullsrc);
+      $(this).children('.imgThumbnails').attr('src', fullsrc);
+    });  
+  }

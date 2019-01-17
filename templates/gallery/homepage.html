@@ -12,13 +12,13 @@
     {% endif %}
         <div class="bag">
             <div class="row-u">
-
+            
             {% for img in images %}
 
                 <!-- img cards -->
                 <div class="col-u">
 
-                    <img src="{{ img.image.thumbnail.url }}" alt="mountains" class="imgThumbnails" src_full="{{ img.image.url }}">
+                    <img src="{{ img.image.thumbnail.url }}" alt="mountains" id="img{{img.id}}" class="imgThumbnails" src_full="{{ img.image.url }}">
                     <div class="albumName">
                         <a href="{% url 'gallery:gallery' img.tag %}">
                             <span class="onThumbnail">
@@ -55,11 +55,17 @@
         <div class="overlay"></div>
         <div class="zoomImg">
             <img src="#" alt="image" class="imgProperty">
+            <div class="afterZoomName">
+                <a href="#">
+                    <span class="afterZoomDetails"></span>
+                </a>
+            </div>
+            
         </div>
 
     {% endblock %}
     
    {% block scripts %}
     {{ block.super }}
-        <script src="{% static 'js/homepage.js' %}"></script>
+        <!-- <script src="{% static 'js/homepage.js' %}"></script> -->
     {% endblock %}
