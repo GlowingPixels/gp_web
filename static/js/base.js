@@ -88,3 +88,21 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
         }
     });
 }
+//ajax for search
+$(()=>{
+    $('#search').keyup(()=> { 
+        $.ajax({
+            type: "POST",
+            url: "/accounts/search/",
+            data: {
+                'search_text': $('#search').val(),
+                'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+            },
+            dataType: "html",
+            success: (res,status,xhr)=> {
+                $('#search_results').html(res);
+                console.log(res);
+            }
+        });
+    });
+});

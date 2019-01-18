@@ -2,7 +2,7 @@
 
 from django.shortcuts import render, redirect
 from django.views import View
-from .models import Gallery
+from .models import Gallery, ImageCategory
 from .forms import ImageCreateForm
 from django.contrib.auth.decorators import login_required
 
@@ -12,7 +12,8 @@ def gallery(req, category=None):
     in a category
     """
     if(category!=None):
-        images = Gallery.objects.filter(tag=category)
+        tag = ImageCategory.objects.filter(category=category)
+        images = Gallery.objects.filter(tag__in=tag)
     else:
         images = Gallery.objects.all()
 
