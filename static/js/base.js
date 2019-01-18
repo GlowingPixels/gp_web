@@ -31,9 +31,9 @@ $(document).ready(()=> {
     function checkWidth() {
         var windowSize = $(window).width();
 
-        if (windowSize >= 900) {
+        if (windowSize >= 1150) {
             $(".navContent-u").css("display", "block");
-        }else if (windowSize < 900)  {
+        }else if (windowSize < 1150)  {
             $(".navContent-u").css("display", "none");
         }
     }
@@ -46,6 +46,31 @@ $(document).ready(()=> {
 // to scroll down the category on hover
 $(".dropdown-u").hover(()=>{
     $(".dropdownContent-u").fadeToggle();
+});
+
+//focus effects on search bar
+$(".searchArea").focus(()=>{
+    var randcolor = randomcolor();
+    $(".searchBar").css('border', '2px solid ' + String(randcolor));
+    $(".searchBar").css('box-shadow', "2px 0px 3px " + String(randcolor));
+    $(".fa-search").css('color', String(randcolor));
+});
+$(".searchArea").blur(()=>{
+    var randcolor = randomcolor();
+    $(".searchBar").css('border', '2px solid rgb(226, 226, 226)');
+    $(".searchBar").css('box-shadow', 'none');
+    $(".fa-search").css('color', 'white');
+});
+
+// code for showing search reasult
+$('.searchArea').keyup(()=>{
+    var searchText = $('.searchArea').val();
+    console.log(searchText.length);
+    if(searchText.length > 0){
+        $(".searchContent").css('display', 'block');
+    }else{
+        $(".searchContent").css('display', 'none');
+    }
 });
 
 //code only for phone

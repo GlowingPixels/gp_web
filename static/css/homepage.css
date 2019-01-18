@@ -100,7 +100,7 @@
     z-index: 4;
     height: 98%;
     width: auto;
-    margin: 2%;
+    margin: 2% 0;
 }
 
 .imgProperty    {
@@ -109,13 +109,13 @@
     border-radius: 5px;
 }
 
-.afterZoomDetails   {
+/* .afterZoomDetails   {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
     font-size: 150%;
     margin-left: 5px;
-}
+} */
 
 /* for grid control */
 @media only screen and (max-width: 980px) {

@@ -16,9 +16,9 @@
             {% for img in images %}
 
                 <!-- img cards -->
-                <div class="col-u">
+                <div class="col-u" s="a">
 
-                    <img src="{{ img.image.thumbnail.url }}" alt="mountains" id="img{{img.id}}" class="imgThumbnails" src_full="{{ img.image.url }}">
+                    <img class="imgThumbnails" src="{{ img.image.thumbnail.url }}" alt="Images"  src_full="{{ img.image.url }}">
                     <div class="albumName">
                         <a href="#">
                             <span class="onThumbnail">
@@ -55,11 +55,11 @@
         <div class="overlay"></div>
         <div class="zoomImg">
             <img src="#" alt="image" class="imgProperty">
-            <div class="afterZoomName">
+            <!-- <div class="afterZoomName">
                 <a href="#">
                     <span class="afterZoomDetails"></span>
                 </a>
-            </div>
+            </div> -->
             
         </div>
 

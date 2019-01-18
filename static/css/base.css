@@ -70,16 +70,41 @@ body, html {
     margin: 0 -3px;
 }
 
-.searchArea {
-    border: none;
+/* search panel */
+.searchContainer    {
+    position: absolute;
+    right: 580px;
+    top: 40px;
 }
 
 .searchBar  {
-    border: 2px solid black;
-    padding: 3px;
-    border-radius: 10px;
-    margin-left: 5px;
+    border: 2px solid rgb(226, 226, 226);
+    background: rgb(226, 226, 226);
+    padding: 6px;
+    border-radius: 20px;
+    color: white;
+    display: inline;
+    transition: 200ms;
+}
+
+.searchArea {
+    border: none;
     outline: none;
+    background: rgb(226, 226, 226);
+}
+
+.searchContent  {
+    display: none;
+    position: absolute;
+    width: 210px;
+    text-align: center;
+    background: beige;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.searchContent a    {
+    text-decoration: none;
 }
 
 /* hover effects */
@@ -91,7 +116,7 @@ body, html {
 
 
 /* for tablet mode */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1150px) {
     /* code for navbar collapse */
     .navbar-u {
         padding: 15px 0;
@@ -130,6 +155,21 @@ body, html {
         margin-top: 5px;
     }
 
+    .searchContainer  {
+        right: 90px;
+        top: 18px;
+    }
+
+  }
+
+  /* to hide search area */
+  @media only screen and (max-width: 624px) {
+      .searchBar   {
+          display: none;
+      }
+      .searchContent    {
+          display: none;
+      }
   }
 
   /* bottomBar */

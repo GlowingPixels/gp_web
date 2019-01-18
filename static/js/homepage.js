@@ -1,7 +1,8 @@
 console.log("homepage.js connected");
 
 // thumbanils hover effects
-$(".col-u").hover(
+if (window.matchMedia("(max-resolution: 192dpi)").matches) {
+  $(".col-u").hover(
     function() {
       $(this).children('img').css("filter", "brightness(70%)");
       $(this).children('.enlarge').children('.backLay').fadeIn();
@@ -12,31 +13,45 @@ $(".col-u").hover(
       $(this).css("bottom", "0");
     }
   );
+}
 
-  // img zoom in-out code
-  $(".backLay").click(function() {
+// img zoom in-out code
+$(".backLay").click(function() {
       var src = $( this ).parent('.enlarge').siblings(".imgThumbnails").attr('src_full');
-      var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
+      // var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
       $('.zoomImg').children('img').attr('src', src);
-      $('.zoomImg').children('.afterZoomName').children('a').children('span').html(byName);
+      //$('.zoomImg').children('.afterZoomName').children('a').children('span').html(byName);
       $('.zoomImg').fadeIn();
       $(".overlay").fadeIn();
       $('body').css('overflow', 'hidden');
-      console.log("clicked");
-      console.log(byName);
-  });
+      // console.log("clicked");
+      // console.log(byName);
+});
 
-  $(".overlay").click(()=>{
+$(".overlay").click(()=>{
       $(".overlay").fadeOut();
       $('.zoomImg').fadeOut();
       $('body').css('overflow', 'visible');
-  });
+});
 
-  //for phones  
-  if (window.matchMedia("(min-resolution: 192dpi)").matches) {
-    $(".col-u").each(()=>{
-      var fullsrc = $(this).children('.imgThumbnails').attr('src_full');
-      console.log(fullsrc);
+//code only for phones  
+if (window.matchMedia("(min-resolution: 192dpi)").matches) {
+    //code for resizing of img in phone mode
+    $(".col-u").each(function(index){
+      var fullsrc = $(this).children(".imgThumbnails").attr("src_full");
       $(this).children('.imgThumbnails').attr('src', fullsrc);
-    });  
-  }
+    });
+
+    // img zoom in-out code
+    $(".imgThumbnails").click(function() {
+      var src = $( this ).attr('src_full');
+      // var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
+      $('.zoomImg').children('img').attr('src', src);
+      // $('.zoomImg').children('.afterZoomName').children('a').children('span').html(byName);
+      $('.zoomImg').fadeIn();
+      $(".overlay").fadeIn();
+      $('body').css('overflow', 'hidden');
+      //console.log("clicked");
+      //console.log(byName);
+    });    
+}
