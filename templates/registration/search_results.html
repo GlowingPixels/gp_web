@@ -1,11 +1,7 @@
-{% load staticfiles %}
-{% block content %}
 {% if search_results %}
     {% for result in search_results %}
-        <a href="#">{{result.username}}: {{result.first_name}}</a> <!--TODO: add a link to generic user profile view template-->
+        <a href="{% url 'users:fellow_user' result.username %}">{{result.username}}: {{result.first_name}}</a> <!--TODO: add a link to generic user profile view template-->
     {% endfor %}
 {% else %}
     <a>No results Found</a>
 {% endif %}
-
-{% endblock %}

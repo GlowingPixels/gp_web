@@ -1,24 +1,24 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
-{% block title %}User Profile{% endblock %}
+<title>{% block title %}User|{% endblock %}</title>
 {% block content %}
     <!-- css link -->
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <!-- HTML starts here -->
         <div class="profileContainer">
-            {% if user.profile_pic %}
-
-            <img src="{{ user.cover_pic.url }}" alt="Image" class="coverImg">
-            <img src="{{ user.profile_pic.url }}" alt="Image" class="profilePicture">
+            {% if fellow_user.profile_pic %}
+            <img src="{{fellow_user.cover_pic.url}}" alt="Image" class="coverImg">
+            <img src="{{fellow_user.profile_pic.url}}" alt="Image" class="profilePicture">
             {% else %}
             <div class="coverImgContainer">
                 <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="coverImg">
             </div>
             <!-- <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture"> -->
             {% endif %}
+            <h2>{{fellow_user.first_name}}</h2>
             <!-- <div class="userDetails">
                 <div class="userDetailsStyle">
-                    {{ user.first_name }} {{ user.last_name }}
+                    {{ fellow_user.first_name }} {{ fellow_user.last_name }}
                 </div>
             </div> -->
         </div>

@@ -74,16 +74,10 @@ $(()=>{
                 'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
             },
             dataType: "html",
-            success: (data)=> {
-                $('#search_results').html(data);
+            success: (res,status,xhr)=> {
+                $('#search_results').html(res);
+                console.log(res);
             }
         });
     });
 });
-
-// $(()=>{
-//     $('#search_results').mouseleave(function () { 
-//         $(this).css('display','None');
-//     });
-    
-// });

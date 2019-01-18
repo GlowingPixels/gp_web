@@ -65,6 +65,17 @@
                                 <label class="custom-file-label" for="inputGroupFile03"></label>
                             </div>
                         </div>
+
+
+                        <div class="input-group mb-3 d1">              
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" title="Your Cover Pic">Upload</button>
+                            </div>
+                            <div class="custom-file">
+                                {% render_field form.cover_pic class="custom-file-label" id="inputGroupFile03" %}
+                                <label class="custom-file-label" for="inputGroupFile03"></label>
+                            </div>
+                        </div>
                                             
                         <div id="op">
                             <input type="checkbox" name="read" value="didRead" required> Read the 
