@@ -116,7 +116,7 @@
                     </span>
                     <span id="sp4">
                         <span id="sp2">
-                            <span>2018 </span>
+                            <span>{% now "Y" %}</span>
                             <i class="far fa-copyright"></i>
                             <span>glowingpixels.com</span>
                         </span>
@@ -137,7 +137,6 @@
         ></script>
         <!-- js file link -->
         <script src="{% static 'js/base.js' %}"></script>
-        <script src="{% static 'js/homepage.js' %}"></script>
     {% endblock %}
 
     </body>
