@@ -45,8 +45,8 @@
                         <span class="onThumbnail">Published on {{ img.date }}</span>
                     </div>
 
-                    <div class="lovedBtn">
-                        <i class="fas fa-heart"></i>
+                    <div class="lovedBtn" id="/like/{{ img.id }}/"><!--The ID of the Love button acts as an urlpattern for the ajax call-->
+                        <a style="text-decoration:none"><i class="fas fa-heart"></i></a>
                     </div>
 
                 </div>
@@ -71,5 +71,5 @@
     
    {% block scripts %}
     {{ block.super }}
-        <!-- <script src="{% static 'js/homepage.js' %}"></script> -->
+        <script src="{% static 'js/homepage.js' %}"></script>
     {% endblock %}
