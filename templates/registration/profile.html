@@ -6,16 +6,21 @@
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <!-- HTML starts here -->
         <div class="profileContainer">
-            {% if user.profile_pic %}
 
-            <img src="{{ user.cover_pic.url }}" alt="Image" class="coverImg">
+            {% if user.profile_pic %}
             <img src="{{ user.profile_pic.url }}" alt="Image" class="profilePicture">
+            {% else %}
+            <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture">
+            {% endif %}
+
+            {% if user.cover_pic.url %}
+            <img src="{{ user.cover_pic.url }}" alt="Image" class="coverImg">
             {% else %}
             <div class="coverImgContainer">
                 <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="coverImg">
             </div>
-            <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture">
             {% endif %}
+
             <i class="fas fa-cog"></i>
             <!-- <div class="userDetails">
                 <div class="userDetailsStyle">
