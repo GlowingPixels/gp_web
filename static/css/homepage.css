@@ -59,6 +59,11 @@
     position: absolute;
     top: 8px;
     right: 20px;
+    font-size: 20px;
+  }
+
+  .fa-heart {
+      text-shadow: 0 0 20px gray;
   }
 
   .afterLoved {
