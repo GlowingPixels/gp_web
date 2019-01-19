@@ -1,4 +1,3 @@
-
 """
 A very basic Gallery App Model that has an image and its description with date
 """
@@ -6,6 +5,7 @@ from django.contrib.auth import get_user_model
 from datetime import datetime
 from django.db import models
 from stdimage import StdImageField
+from django.conf import settings
 
 User = get_user_model()
 
@@ -31,6 +31,7 @@ class Gallery(models.Model):
     label = models.CharField(max_length=100)
     descriptions = models.TextField(max_length=500, blank=True)
     date = models.DateField(auto_now=True)
+    likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='pic_liked')
     is_360 = models.BooleanField(default=False)
     image_360Link = models.URLField(max_length=500, blank=True)
 
