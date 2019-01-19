@@ -14,8 +14,9 @@
             <div class="coverImgContainer">
                 <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="coverImg">
             </div>
-            <!-- <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture"> -->
+            <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture">
             {% endif %}
+            <i class="fas fa-cog"></i>
             <!-- <div class="userDetails">
                 <div class="userDetailsStyle">
                     {{ user.first_name }} {{ user.last_name }}
@@ -23,4 +24,7 @@
             </div> -->
         </div>
 
+    {% block scripts %}
+    {{ block.super }}
+        <script src="{% static 'js/profile.js' %}"></script>
 {% endblock %}
