@@ -12,6 +12,15 @@ body, html {
     bottom: 15px;
 }
 
+.searchContainer    {
+    top: 17px;
+}
+
+@media only screen and (max-width: 1150px){
+    .searchContainer    {
+        top: 13px;
+    }
+}
 /* profile css starts here */
 .profileContainer    {
     width: 100%;
@@ -41,9 +50,9 @@ body, html {
     border: 2px solid white;
 } */
 
-.userDetails    {
+/* .userDetails    {
 
-}
+} */
 
 @media only screen and (max-width: 900px) {
 

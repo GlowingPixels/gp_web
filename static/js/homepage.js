@@ -34,6 +34,12 @@ $(".overlay").click(()=>{
       $('body').css('overflow', 'visible');
 });
 
+// code for like
+$(".lovedBtn").click(()=>{
+  $(this).toggleClass("afterLoved");
+  console.log("clicked");
+});
+
 //code only for phones  
 if (window.matchMedia("(min-resolution: 192dpi)").matches) {
     //code for resizing of img in phone mode

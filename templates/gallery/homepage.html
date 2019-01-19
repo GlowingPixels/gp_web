@@ -16,7 +16,7 @@
             {% for img in images %}
 
                 <!-- img cards -->
-                <div class="col-u" s="a">
+                <div class="col-u">
 
                     <img class="imgThumbnails" src="{{ img.image.thumbnail.url }}" alt="Images"  src_full="{{ img.image.url }}">
                     <div class="albumName">
@@ -43,6 +43,10 @@
 
                     <div class="publishedOn">
                         <span class="onThumbnail">Published on {{ img.date }}</span>
+                    </div>
+
+                    <div class="lovedBtn">
+                        <i class="far fa-heart"></i>
                     </div>
 
                 </div>

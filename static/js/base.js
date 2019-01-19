@@ -87,7 +87,46 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
             // $(id).css({textShadow: String(randcolor) + " 0 0 3px"});
         }
     });
+
+    // code to fade out brand name on clicking fs-search
+    $(".fa-search").click(()=>{
+        var fl = $(".fa-search").attr("flag");
+        if(fl == "true"){
+            var i = 13;
+            var infLoop = setInterval(()=>{
+                var id = "#let" + String(i);
+                $(id).css('transition', "none");
+                $(id).fadeOut();
+                i--;
+                if(i == 0){
+                    clearInterval(infLoop);
+                }
+            }, 70);
+            $(".fa-search").attr('flag', "false");
+            setTimeout(()=>{
+                $(".searchArea").css('display', 'inline-block');
+                $(".searchArea").css('width', '200px');
+            }, 650);
+        }else if(fl == "false"){
+            $(".searchContent").css('display', 'none');
+            $(".searchArea").css('width', '0px');
+            var i = 1;
+            var infLoop = setInterval(()=>{
+                var id = "#let" + String(i);
+                $(id).fadeIn();
+                i++;
+                if(i == 14){
+                    clearInterval(infLoop);
+                }
+            }, 70);
+            $(".fa-search").attr('flag', "true");
+        }
+        
+    });
+
 }
+
+
 //ajax for search
 $(()=>{
     $('#search').keyup(()=> { 

@@ -217,7 +217,7 @@ body, html {
         float: none;
     }
 }
-
+/* code for phones */
 @media (min-resolution: 192dpi)   {
     #endB   {
         text-align: center;
@@ -231,5 +231,21 @@ body, html {
         margin-top: 1%;
         display: block;
         float: none;
+    }
+
+    .searchContainer    {
+        right: 20%;
+        top: 13px;
+    }
+
+    .searchBar  {
+        display: block;
+        padding: 3px;
+    }
+
+    .searchArea {
+        display: none;
+        width: 0;
+        transition: 600ms;
     }
 }
