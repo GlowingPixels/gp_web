@@ -63,11 +63,12 @@
   }
 
   .fa-heart {
-      text-shadow: 0 0 20px gray;
+      text-shadow: 0 0 8px gray;
+      transition: 200ms;
   }
 
   .afterLoved {
-    color: red;
+    color: rgb(245, 52, 52);
   }
 
   .onThumbnail  {

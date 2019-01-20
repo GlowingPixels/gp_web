@@ -219,6 +219,10 @@ body, html {
 }
 /* code for phones */
 @media (min-resolution: 192dpi)   {
+    .brand-u    {
+        font-size: 100%;
+    }
+
     #endB   {
         text-align: center;
     }
@@ -234,13 +238,14 @@ body, html {
     }
 
     .searchContainer    {
-        right: 20%;
+        right: 15%;
         top: 13px;
     }
 
     .searchBar  {
         display: block;
         padding: 3px;
+        font-size: 80%;
     }
 
     .searchArea {

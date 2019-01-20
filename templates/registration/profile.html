@@ -14,19 +14,36 @@
             {% endif %}
 
             {% if user.cover_pic %}
-            <img src="{{ user.cover_pic.url }}" alt="Image" class="coverImg">
+            <div class="coverImgContainer">
+                <img src="{{ user.cover_pic.url }}" alt="Image" class="coverImg">
+            </div>
             {% else %}
             <div class="coverImgContainer">
                 <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="coverImg">
             </div>
             {% endif %}
+            
+            <!-- settings icon -->
+            <a href="#">
+                <i class="fas fa-cog"></i>
+            </a>
 
-            <i class="fas fa-cog"></i>
-            <!-- <div class="userDetails">
-                <div class="userDetailsStyle">
-                    {{ user.first_name }} {{ user.last_name }}
-                </div>
-            </div> -->
+            <!-- edit icon -->
+            <i class="fas fa-pencil-alt coverChangeIcon"></i>
+
+            <!-- social links icon -->
+            <div class="socialLinks">
+                <a href="#">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-whatsapp-square"></i>
+                </a>
+            </div>
+
+            <div class="userFullName">
+                {{ user.first_name }} {{ user.last_name }}
+            </div>
         </div>
     {% endblock %}
 
