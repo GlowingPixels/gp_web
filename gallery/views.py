@@ -55,12 +55,17 @@ def add_likes(request, id):
     image = Gallery.objects.get(id=id)
     if user.pic_liked.filter(id=image.id).exists():
         image.likes.remove(user)
-        liked_ = False
     else:
         image.likes.add(user)
-        liked_ = True
     image.save()
-    if(liked_):
-        return HttpResponse("Liked")
+    return HttpResponse("Liked")
+
+
+def has_liked(request, id):
+    print("Im callde")
+    user = request.user
+    image = Gallery.objects.get(id=id)
+    if user.pic_liked.filter(id=image.id).exists():
+        return HttpResponse("True")
     else:
-        return HttpResponse("Unliked")
+        return HttpResponse("False")

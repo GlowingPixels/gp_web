@@ -72,3 +72,20 @@ $(()=>{
       });
   });
 });
+
+$(()=>{
+  $(".lovedBtn").each(function(e){
+    var id = String($( this ).attr('id'))+"check/";    
+    $.ajax({
+      type: "GET",
+      url: id,
+      data: {},
+      dataType: "html",
+      success: (res,status,xhr)=> {
+        if(res=="True"){
+          $(this).addClass("afterLoved");
+        }
+      }
+    });
+  });
+});

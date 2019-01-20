@@ -1,4 +1,4 @@
-from .models import ImageCategory
+from .models import ImageCategory,Gallery
 
 def categories(request):
     return {
