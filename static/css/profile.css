@@ -18,13 +18,14 @@ body, html {
 
 @media only screen and (max-width: 1150px){
     .searchContainer    {
-        top: 13px;
+        top: 10px;
     }
 }
 /* profile css starts here */
 .profileContainer    {
     width: 100%;
     position: relative;
+    margin-bottom: 500px;
 }
 
 .coverImgContainer  {
@@ -46,23 +47,104 @@ body, html {
     width: 200px;
     position: absolute;
     top: 70%;
-    left: 15%;
+    left: 200px;
     border: 2px solid white;
 }
 
+/* settings icon */
 .fa-cog {
     position: absolute;
     color: white;
     text-shadow: 0 0 5px black;
     font-size: 20px;
-    right: 20px;
+    right: 25px;
     top: 15px;
+    transition: 200ms;
+
 }
 
-/* .userDetails    {
+/* edit icons */
+.coverChangeIcon    {
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: rgba(255, 255, 255, 0.158);
+    border-radius: 5px;
+}
 
-} */
+.fa-pencil-alt    {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.336);
+    cursor: pointer;
+}
+
+/* img Change icon Hover */
+.coverChangeIcon:hover   {
+    background: rgba(255, 255, 255, 0.288);
+}
+
+/* social links css */
+.socialLinks {
+    position: absolute;
+    bottom: 5%;
+    right: 20px;
+    font-size: 35px;
+}
+
+.socialLinks a  {
+    color: #263238;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* social link icon hover */
+.fa-facebook-square:hover,
+.fa-whatsapp-square:hover   {
+    filter: brightness(120%);
+}
+
+/* userDetails */
+.userFullName   {
+    color: #263238;
+    position: absolute;
+    top: 106%;
+    left: 430px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
 
 @media only screen and (max-width: 900px) {
+    .profilePicture {
+        left: 120px;
+    }
 
+}
+
+@media only screen and (max-width: 550px) {
+    .profilePicture {
+        left: 60px;
+    }
+
+}
+
+/* code for phones */
+@media (min-resolution: 192dpi)   {
+    .profilePicture {
+        left: 35%;
+        top: 80%;
+        width: 30%;
+    }
+    
+    .userFullName   {
+        top: 370px;
+        left: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .socialLinks    {
+        font-size: 180%;
+        bottom: 2%;
+    }
 }

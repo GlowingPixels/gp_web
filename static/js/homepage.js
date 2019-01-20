@@ -53,7 +53,13 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
       $('body').css('overflow', 'hidden');
       //console.log("clicked");
       //console.log(byName);
-    });    
+    });   
+    
+    //code for dblclick love react
+    $(".imgThumbnails").dblclick(()=>{
+      console.log("dblclicked");
+      $(".lovedBtn").addClass("afterLoved");
+    });
 }
 
 
@@ -72,3 +78,4 @@ $(()=>{
       });
   });
 });
+
