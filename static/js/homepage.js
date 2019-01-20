@@ -55,11 +55,6 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
       //console.log(byName);
     });   
     
-    //code for dblclick love react
-    $(".imgThumbnails").dblclick(()=>{
-      console.log("dblclicked");
-      $(".lovedBtn").addClass("afterLoved");
-    });
 }
 
 
@@ -73,7 +68,12 @@ $(()=>{
           data: {},
           dataType: "html",
           success: (res,status,xhr)=> {
-            $(this).toggleClass("afterLoved");
+            if(res=="authenticated"){
+              $(this).toggleClass("afterLoved");
+            }
+            else{
+              window.location.href = '/accounts/login/';
+            }
           }
       });
   });

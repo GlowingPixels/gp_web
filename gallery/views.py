@@ -58,9 +58,9 @@ def add_likes(request, id):
     else:
         image.likes.add(user)
     image.save()
-    return HttpResponse("Liked")
+    return HttpResponse("authenticated")
 
-
+@login_required
 def has_liked(request, id):
     print("Im callde")
     user = request.user
