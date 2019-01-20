@@ -34,12 +34,6 @@ $(".overlay").click(()=>{
       $('body').css('overflow', 'visible');
 });
 
-// code for like
-$(".lovedBtn").click(()=>{
-  $(this).toggleClass("afterLoved");
-  console.log("clicked");
-});
-
 //code only for phones  
 if (window.matchMedia("(min-resolution: 192dpi)").matches) {
     //code for resizing of img in phone mode
@@ -61,3 +55,20 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
       //console.log(byName);
     });    
 }
+
+
+//AJAX call for the love React Implementation
+$(()=>{
+  $('.lovedBtn').click(function(){ 
+      var id = String($( this ).attr('id'));
+      $.ajax({
+          type: "GET",
+          url: id,
+          data: {},
+          dataType: "html",
+          success: (res,status,xhr)=> {
+            $(this).toggleClass("afterLoved");
+          }
+      });
+  });
+});

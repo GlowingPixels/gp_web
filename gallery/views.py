@@ -1,6 +1,6 @@
 """A basic view for the Gallery App"""
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.views import View
 from .models import Gallery, ImageCategory
 from .forms import ImageCreateForm
@@ -11,6 +11,7 @@ def gallery(req, category=None):
     Default view that renders all the images
     in a category
     """
+
     if(category!=None):
         tag = ImageCategory.objects.filter(category=category)
         images = Gallery.objects.filter(tag__in=tag)
@@ -46,3 +47,20 @@ def create_image(request):
     else:
         form = ImageCreateForm()
         return render(request, 'gallery/imagecreate.html', {'form': form})
+
+@login_required
+def add_likes(request, id):
+    
+    user = request.user
+    image = Gallery.objects.get(id=id)
+    if user.pic_liked.filter(id=image.id).exists():
+        image.likes.remove(user)
+        liked_ = False
+    else:
+        image.likes.add(user)
+        liked_ = True
+    image.save()
+    if(liked_):
+        return HttpResponse("Liked")
+    else:
+        return HttpResponse("Unliked")
