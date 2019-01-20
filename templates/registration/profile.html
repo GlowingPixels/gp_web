@@ -13,7 +13,7 @@
             <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="profilePicture">
             {% endif %}
 
-            {% if user.cover_pic.url %}
+            {% if user.cover_pic %}
             <img src="{{ user.cover_pic.url }}" alt="Image" class="coverImg">
             {% else %}
             <div class="coverImgContainer">
