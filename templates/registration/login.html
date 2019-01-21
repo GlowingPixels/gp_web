@@ -13,7 +13,7 @@
 
     <!-- body html -->
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-lg-8 col-md-10">
                 <div class="formbody">
                     {% if form.errors %}
@@ -34,13 +34,12 @@
 
                         <input type="submit" class="btn btn-primary loginBtn" value="Login">                
                     </form>
-                    <p class="dig"><a href="{% url 'password_reset' %}">Forgot Password?</a><p>
+                    <p class="dig "><a href="{% url 'password_reset' %}">Forgot Password?</a><p>
                     <p class="dig"><strong>New on GlowingPixels ?</strong></p>
                     <div>
                         <a href="{% url 'users:signup' %}">
                             <button type="submit" class="btn btn-primary createAccountBtn">Create an Account</button>
-                         </a>
-
+                        </a>
                     </div>
                 </div>
             </div>
