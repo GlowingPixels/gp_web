@@ -8,39 +8,43 @@
 {% block content %}
 {% load widget_tweaks %}
 
+<!-- css Link -->
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div class="formbody">
+
+    <!-- body html -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="formbody">
                     {% if form.errors %}
-                     <h3 style="color:red;">Login Failed, username doesn't exist</h3>
+                        <h3 style="color:red;"> {{form.errors.username}} </h3>
                     {% else %}
-                    <h3>Login</h3>
+                        <h3>Login</h3>
                     {% endif %}
-                        <form action="{% url 'login' %}" method="post">
-                            {% csrf_token %}
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
 
-                            <div class="form-group">
-                                {% render_field form.username class="form-control" placeholder="Username" %}
-                            </div>
+                        <div class="form-group userID">
+                            {% render_field form.username class="form-control" placeholder="Username" %}
+                        </div>
 
-                            <div class="form-group">
-                                {% render_field form.password class="form-control" placeholder="Password" %}
-                            </div>
+                        <div class="form-group userPassword">
+                            {% render_field form.password class="form-control" placeholder="Password" %}
+                        </div>
 
-                                <input type="submit" class="btn btn-primary" value="Login">                
-                        </form>
-                        <p class="dig"><a href="{% url 'password_reset' %}">Forgot Password?</a><p>
-                        <p class="dig"><strong>New on GlowingPixels ?</strong></p>
+                        <input type="submit" class="btn btn-primary loginBtn" value="Login">                
+                    </form>
+                    <p class="dig"><a href="{% url 'password_reset' %}">Forgot Password?</a><p>
+                    <p class="dig"><strong>New on GlowingPixels ?</strong></p>
                     <div>
+                        <a href="{% url 'users:signup' %}">
+                            <button type="submit" class="btn btn-primary createAccountBtn">Create an Account</button>
+                         </a>
 
-                    <a href="{% url 'users:signup' %}">
-                        <button type="submit" class="btn btn-primary">Create an Account</button>
-                    </a>
-
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
 {% endblock %}

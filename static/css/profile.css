@@ -100,7 +100,7 @@ body, html {
 
 /* social link icon hover */
 .fa-facebook-square:hover,
-.fa-whatsapp-square:hover   {
+.fa-instagram:hover   {
     filter: brightness(120%);
 }
 

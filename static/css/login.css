@@ -1,12 +1,5 @@
-body    {
-    background-image: url(../StaticPhotos/login3.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-}
-
-html    {
-    height: 100%;
+.container  {
+    height: 79%;
 }
 
 .formbody   {
@@ -23,12 +16,38 @@ html    {
     font-size: 15px;
 }
 
-.container  {
-    max-height: 396px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+.form-group {
+    background : rgb(232, 240, 254);
+    width: 30%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.form-group > input {
+    outline: none;
+    padding: 0;
+    border: none;
+    text-align: center;
+    width: 100%;
+    background : rgb(232, 240, 254);
+}
+
+.loginBtn, .createAccountBtn   {
+    background: green;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+}
+
+.createAccountBtn   {
+    background: blue;
+}
+
+@media (min-resolution: 192dpi)   {
+    .form-group {
+        width: 0%;
+    }
 }
