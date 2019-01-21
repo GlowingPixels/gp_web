@@ -101,3 +101,8 @@
         </div>
     </div>
 {% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script src="{% static 'js/signup.js' %}"></script>
+{% endblock %}
