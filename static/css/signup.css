@@ -1,4 +1,23 @@
+/* navbar resize only in profile page */
 /* base modification only for this page */
+.navbar-u   {
+    padding: 10px 0;
+}
+
+.navContent-u   {
+    bottom: 15px;
+}
+
+.searchContainer    {
+    top: 17px;
+}
+
+@media only screen and (max-width: 1150px){
+    .searchContainer    {
+        top: 13px;
+    }
+}
+
 footer {
     position: absolute;
     bottom: 0px; 
@@ -11,7 +30,39 @@ footer {
 }
 
 .row    {
-    width: 50%;
+    width: 30%;
     margin: 5px auto;
-    padding: 5px 10px;
+    padding: 10px 0;
+    background : rgb(232, 240, 254);
+    border-radius: 5px;
+}
+
+.row input  {
+    border: none;
+    outline: none;
+    text-align: center;
+    background : rgb(232, 240, 254) !important;
+    width: 100%;
+}
+
+.firstName, .lastName   {
+    display: inline-block;
+    width: 15%;
+}
+
+/* back Backend */
+
+.errorlist  {
+    display: none;
+}
+
+/* code fof phones */
+@media (min-resolution: 192dpi)   {
+    .navbar-u   {
+        padding: 15px 0;
+    }
+
+    .row {
+        width: 60%;
+    }
 }

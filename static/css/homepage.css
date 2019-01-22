@@ -105,7 +105,7 @@
     left:0px;
     z-index: 2;
     display: none;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .zoomImg   {

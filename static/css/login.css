@@ -1,4 +1,23 @@
 /* base modification only for login page */
+/* navbar resize only in profile page */
+.navbar-u   {
+    padding: 10px 0;
+}
+
+.navContent-u   {
+    bottom: 15px;
+}
+
+.searchContainer    {
+    top: 17px;
+}
+
+@media only screen and (max-width: 1150px){
+    .searchContainer    {
+        top: 13px;
+    }
+}
+
 footer {
     position: absolute;
     bottom: 0px; 
@@ -64,6 +83,10 @@ footer {
 }
 
 @media (min-resolution: 192dpi)   {
+    .navbar-u   {
+        padding: 15px 0;
+    }
+
     .form-group {
         width: 60%;
     }

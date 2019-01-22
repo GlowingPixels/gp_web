@@ -3,7 +3,7 @@ body, html {
     margin: 0;
 }
 
-/* navbar resize only in profile pge */
+/* navbar resize only in profile page */
 .navbar-u   {
     padding: 10px 0;
 }
@@ -18,7 +18,7 @@ body, html {
 
 @media only screen and (max-width: 1150px){
     .searchContainer    {
-        top: 10px;
+        top: 13px;
     }
 }
 /* profile css starts here */
@@ -130,6 +130,10 @@ body, html {
 
 /* code for phones */
 @media (min-resolution: 192dpi)   {
+    .navbar-u   {
+        padding: 15px 0;
+    }
+
     .profilePicture {
         left: 35%;
         top: 80%;

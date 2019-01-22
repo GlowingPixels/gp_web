@@ -19,44 +19,38 @@
 
                 <div class="row">
                     {{ form.username.errors }}
-                    {% render_field form.username class="form-control" placeholder="Username" %}
+                    {% render_field form.username placeholder="Username" %}
+                </div>
+
+
+                <div class="row firstName">
+                    {% render_field form.first_name  placeholder="First Name" %}
+                </div>                                
+                <div class="row lastName">
+                    {% render_field form.last_name  placeholder="Last Name" %}
                 </div>
 
 
                 <div class="row">
-                    <div >
-                        {% render_field form.first_name class="form-control" placeholder="First Name" %}
-                    </div>                                
-                    <div >
-                        {% render_field form.last_name class="form-control" placeholder="Last Name" %}
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div >
-                        {{ form.email.errors }}
-                        {% render_field form.email class="form-control" placeholder="Enter email" %}
-                    </div>
+                    {{ form.email.errors }}
+                    {% render_field form.email placeholder="Enter email" %}
                 </div>
 
                 <div class="row">
-                    <div>
-                        {{ form.password1.errors }}
-                        {% render_field form.password1 class="form-control" placeholder="Password" %}
-                    </div>
-                    <div >
-                        {{ form.password2.errors }}
-                        {% render_field form.password2 class="form-control" placeholder="Confirm Password" %}
-                    </div>
+                    {{ form.password1.errors }}
+                    {% render_field form.password1 placeholder="Password" %}
                 </div>
-                    
+                <div class="row">
+                    {{ form.password2.errors }}
+                    {% render_field form.password2 placeholder="Confirm Password" %}
+                </div>
 
-                
-                        {% render_field form.profile_pic class="jekono class like form-control" id="tr input er id" %}
-                        {% render_field form.cover_pic class="" id="" %}
-                    
-                                            
+
+                <div style="display:none">
+                    {% render_field form.profile_pic %}
+                    {% render_field form.cover_pic %}                    
+                </div>
+
                 <div>
                     <input type="checkbox" name="read" value="didRead" required> Read the 
                     <a href="#" class="lk">Terms and Conditions</a>
