@@ -8,3 +8,7 @@ $(".fa-cog").hover(
         $(".fa-cog").css('transform', 'rotate(0deg)');
     }
 );
+
+$(".fa-pencil-alt").click(function () {
+    $(".picEdit").fadeToggle();
+});

@@ -64,7 +64,7 @@ body, html {
 }
 
 /* edit icons */
-.coverChangeIcon    {
+.imgChangeIcon    {
     padding: 5px;
     position: absolute;
     right: 20px;
@@ -79,8 +79,32 @@ body, html {
     cursor: pointer;
 }
 
+.picEdit    {
+    position: absolute;
+    right: 60px;
+    top: 64px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.336);
+    cursor: pointer;
+    display: none;
+}
+
+.profilePicChange, .coverPicChange  {
+    background: rgba(255, 255, 255, 0.212);
+    margin: 0 5px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    transition: 200ms;
+}
+
+.profilePicChange:hover, 
+.coverPicChange:hover   {
+    filter: brightness(80%);
+}
+
+
 /* img Change icon Hover */
-.coverChangeIcon:hover   {
+.imgChangeIcon:hover   {
     background: rgba(255, 255, 255, 0.288);
 }
 
@@ -114,6 +138,26 @@ body, html {
     font-size: 30px;
 }
 
+.imgContributed   {
+    color: #263238;
+    position: absolute;
+    top: 120%;
+    left: 430px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.contributeImgIcon  {
+    color: orangered;
+    transition: 200ms;
+    opacity: 0;
+}
+
+.imgContributed:hover .contributeImgIcon  {
+    opacity: 1;
+} 
+
+
 @media only screen and (max-width: 900px) {
     .profilePicture {
         left: 120px;
@@ -141,10 +185,21 @@ body, html {
     }
     
     .userFullName   {
-        top: 370px;
+        top: 140%;
         left: auto;
         width: 100%;
         text-align: center;
+    }
+
+    .imgContributed   {
+        top: 152%;
+        left: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contributeImgIcon  {
+        opacity: 1;
     }
 
     .socialLinks    {
