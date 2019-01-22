@@ -62,7 +62,7 @@ def add_likes(request, id):
 
 @login_required
 def has_liked(request, id):
-    print("Im callde")
+
     user = request.user
     image = Gallery.objects.get(id=id)
     if user.pic_liked.filter(id=image.id).exists():

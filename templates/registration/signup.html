@@ -16,11 +16,16 @@
             <p style="font-size: 130%"> Sign Up Now!</p>
             <form enctype="multipart/form-data" method="POST">
                 {% csrf_token %}
-
+                {% if form.username.errors %}
                 <div class="row">
-                    {{ form.username.errors }}
+                    {% render_field form.username placeholder="Username already exists" %}
+                </div>
+                {% else %}
+                <div class="row">
                     {% render_field form.username placeholder="Username" %}
                 </div>
+                {% endif %}
+                
 
 
                 <div class="row firstName">
@@ -37,13 +42,19 @@
                 </div>
 
                 <div class="row">
-                    {{ form.password1.errors }}
                     {% render_field form.password1 placeholder="Password" %}
                 </div>
+
+                {% if form.password2.errors %}
                 <div class="row">
-                    {{ form.password2.errors }}
+                    {% render_field form.password2 placeholder="Passwords not matching" %}
+                </div>
+                {% else %}
+                <div class="row">
                     {% render_field form.password2 placeholder="Confirm Password" %}
                 </div>
+                {% endif %}
+                
 
 
                 <div style="display:none">
