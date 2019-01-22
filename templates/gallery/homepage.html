@@ -17,7 +17,9 @@
 
                 <!-- img cards -->
                 <div class="col-u">
-
+                    {% if img.image %}
+                    
+                    
                     <img class="imgThumbnails" src="{{ img.image.thumbnail.url }}" alt="Images"  src_full="{{ img.image.url }}">
                     <div class="albumName">
                         <a href="{% url 'gallery:gallery' img.tag %}">
@@ -48,7 +50,7 @@
                      <div class="lovedBtn" id="/like/{{ img.id }}/"><!--The ID of the Love button acts as an urlpattern for the ajax call-->
                         <a style="text-decoration:none"><i class="fas fa-heart"></i></a>
                     </div>
-                   
+                   {% endif %}
 
                 </div>
                 {% endfor %}
