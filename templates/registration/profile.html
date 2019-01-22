@@ -24,7 +24,7 @@
             {% endif %}
             
             <!-- settings icon -->
-            <a href="#">
+            <a href="{% url 'users:settings' %}">
                 <i class="fas fa-cog"></i>
             </a>
 
@@ -33,10 +33,10 @@
 
             <!-- social links icon -->
             <div class="socialLinks">
-                <a href="#">
+                <a href="{{ user.facebook_link }}">
                     <i class="fab fa-facebook-square"></i>
                 </a>
-                <a href="#">
+                <a href="{{ user.instagram_link }}">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
