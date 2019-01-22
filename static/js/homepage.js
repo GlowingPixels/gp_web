@@ -18,14 +18,13 @@ if (window.matchMedia("(max-resolution: 192dpi)").matches) {
 // img zoom in-out code
 $(".backLay").click(function() {
       var src = $( this ).parent('.enlarge').siblings(".imgThumbnails").attr('src_full');
-      // var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
+      var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
       $('.zoomImg').children('img').attr('src', src);
-      //$('.zoomImg').children('.afterZoomName').children('a').children('span').html(byName);
+      $('.zoomImg').children('.afterZoomDetails').children('a').html(byName);
       $('.zoomImg').fadeIn();
       $(".overlay").fadeIn();
       $('body').css('overflow', 'hidden');
-      // console.log("clicked");
-      // console.log(byName);
+      console.log(byName);
 });
 
 $(".overlay").click(()=>{
@@ -45,14 +44,14 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
     // img zoom in-out code
     $(".imgThumbnails").click(function() {
       var src = $( this ).attr('src_full');
-      // var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
+      var byName = $(this).siblings('.postBy').children('a').children('span').html();
       $('.zoomImg').children('img').attr('src', src);
-      // $('.zoomImg').children('.afterZoomName').children('a').children('span').html(byName);
+      $('.zoomImg').children('.afterZoomDetails').children('a').html(byName);
       $('.zoomImg').fadeIn();
       $(".overlay").fadeIn();
       $('body').css('overflow', 'hidden');
       //console.log("clicked");
-      //console.log(byName);
+      console.log(byName);
     });   
     
 }

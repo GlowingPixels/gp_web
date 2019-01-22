@@ -121,18 +121,50 @@
 }
 
 .imgProperty    {
-    height: 90%;
+    height: 80%;
     width: auto;
     border-radius: 5px;
 }
 
-/* .afterZoomDetails   {
+.afterZoomDetails   {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.postByName {
     text-decoration: none;
+    font-size: 130%;
     color: white;
+    padding: 5px 10px;
+    background: rgba(128, 128, 128, 0.431);
+    border-radius: 5px;
     text-transform: uppercase;
-    font-size: 150%;
-    margin-left: 5px;
-} */
+    float: left;
+}
+
+.totalLike  {
+    float: left;
+    padding: 5px 10px;
+    background: rgba(128, 128, 128, 0.431);
+    border-radius: 5px;
+    font-size: 130%;
+    margin-left: 10px;
+    color: white;
+}
+
+.totalLike .fa-heart    {
+    color: red;
+}
+
+.download   {
+    float: right;
+    font-size: 130%;
+    color: white;
+    padding: 5px 10px;
+    background: green;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /* for grid control */
 @media only screen and (max-width: 980px) {
@@ -172,6 +204,10 @@
     .imgProperty    {
         height: auto;
         width: 100%;
+    }
+
+    .download, .postByName, .totalLike  {
+        font-size: 80%;
     }
     
   }
