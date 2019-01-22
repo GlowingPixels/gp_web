@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+<title>
+{% block title %}
+     Settings|Glowing Pixels
+{% endblock %}
+</title>
+{% block content %}
+{% load widget_tweaks %}
+
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update &rarr;">
+    </form>
+
+{% endblock %}
