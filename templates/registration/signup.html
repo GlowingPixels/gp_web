@@ -43,22 +43,26 @@
                     {% render_field form.email placeholder="Enter email" %}
                 </div>
 
-                <div class="row">
+                <div class="row password1">
                     {% render_field form.password1 placeholder="Password" %}
                 </div>
 
                 {% if form.password2.errors %}
+<<<<<<< HEAD
                 <div class="row">
                     {% render_field form.password2 placeholder=form.password2.errors.as_text %}
+=======
+                <div class="row password2">
+                    {% render_field form.password2 placeholder="Passwords not matching" %}
+>>>>>>> 1496c387da921e85a5ad369611a5c1bf3d32ea70
                 </div>
                 {% else %}
-                <div class="row">
+                <div class="row password2">
                     {% render_field form.password2 placeholder="Confirm Password" %}
                 </div>
                 {% endif %}
                 
-
-
+                <!-- bad Backend -->
                 <div style="display:none">
                     {% render_field form.profile_pic %}
                     {% render_field form.cover_pic %}                    
@@ -66,21 +70,21 @@
 
                 <div>
                     <input type="checkbox" name="read" value="didRead" required> Read the 
-                    <a href="#" class="lk">Terms and Conditions</a>
+                    <a href="#" class="termsAndConditions">Terms and Conditions</a>
                 </div>
 
                 <div>
-                    <input type="submit" class="btn btn-primary" value="Sign Up">
+                    <input type="submit" class="btn signupBtn" value="Sign Up">
                 </div>
 
             </form>
 
-                   
-
             <p><strong>Already have an account ?</strong></p>
 
             <div>
-                <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+                <a href="{% url 'login' %}">
+                    <button type="submit" class="btn loginBtn">Login</button>
+                </a>
             </div>
          
         </div>

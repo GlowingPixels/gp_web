@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% block title %}User Profile{% endblock %}
 {% block content %}
+
     <!-- css link -->
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <!-- HTML starts here -->
@@ -19,7 +20,7 @@
             </div>
             {% else %}
             <div class="coverImgContainer">
-                <img src="{% static 'images/profileImg.jpg' %}" alt="Image" class="coverImg">
+                <img src="{% static 'images/coverImg.jpg' %}" alt="Image" class="coverImg">
             </div>
             {% endif %}
             
@@ -29,7 +30,17 @@
             </a>
 
             <!-- edit icon -->
-            <i class="fas fa-pencil-alt coverChangeIcon"></i>
+            <i class="fas fa-pencil-alt imgChangeIcon"></i>
+            <div class="picEdit">
+                <span class="profilePicChange">
+                    <i class="fas fa-image"></i>
+                    <span>Profile</span>
+                </span>
+                <span class="coverPicChange">
+                    <i class="fas fa-image"></i>
+                    <span>Cover</span>
+                </span>
+            </div>
 
             <!-- social links icon -->
             <div class="socialLinks">
@@ -44,7 +55,12 @@
             <div class="userFullName">
                 {{ user.first_name }} {{ user.last_name }}
             </div>
+            <div class="imgContributed">
+                <span>0 Image Contributed</span>
+                <i class="fas fa-image contributeImgIcon"></i>
+            </div>
         </div>
+
     {% endblock %}
 
 {% block scripts %}
