@@ -1,32 +1,41 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 
-#User SignUp
 class SignUp(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-class Settings(CreateView):
-    form_class = CustomUserChangeForm
-    success_url = reverse_lazy('users:profile')
-    template_name = 'registration/settings.html'
+def settings(request):
+    if request.method == 'POST':
+        user_form = CustomUserChangeForm(request.POST, instance=request.user)
 
+        if user_form.is_valid():
+            user_form.save()
+            return HttpResponseRedirect(reverse_lazy('users:profile'))
+        else:
+            print(user_form.errors)
+
+    elif request.method == "GET":
+        user_form = CustomUserChangeForm(instance=request.user)
+        return render(request, 'registration/settings.html', {
+            'form': user_form
+        })
 
 # User search Implementation
-def search_user(req):
-    if req.method == "POST":
-        search_text = req.POST["search_text"]
+def search_user(request):
+    if request.method == "POST":
+        search_text = request.POST["search_text"]
     else:
         search_text = ''
     results = CustomUser.objects.filter(username__icontains=search_text)
-    return render(req, 'registration/search_results.html', {
+    return render(request, 'registration/search_results.html', {
         'search_results': results
         })
 
-def fellow_user(req, fellow_username):
+def fellow_user(request, fellow_username):
     fellow_user = CustomUser.objects.get(username=fellow_username)
-    return render(req, 'registration/fellow_user.html', {'fellow_user': fellow_user})
+    return render(request, 'registration/fellow_user.html', {'fellow_user': fellow_user})
