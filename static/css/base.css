@@ -73,7 +73,7 @@ body, html {
 /* search panel */
 .searchContainer    {
     position: absolute;
-    right: 580px;
+    right: 650px;
     top: 40px;
 }
 
@@ -116,7 +116,7 @@ body, html {
 
 
 /* for tablet mode */
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
     /* code for navbar collapse */
     .navbar-u {
         padding: 15px 0;

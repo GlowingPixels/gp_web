@@ -16,7 +16,7 @@ body, html {
     top: 17px;
 }
 
-@media only screen and (max-width: 1150px){
+@media only screen and (max-width: 1200px){
     .searchContainer    {
         top: 13px;
     }
@@ -129,22 +129,23 @@ body, html {
 }
 
 /* userDetails */
-.userFullName   {
-    color: #263238;
+.userDetailsOnPage  {
     position: absolute;
     top: 106%;
     left: 430px;
+}
+
+.userFullName   {
+    color: #263238;
     text-transform: uppercase;
     font-size: 30px;
 }
 
 .imgContributed   {
     color: #263238;
-    position: absolute;
-    top: 120%;
-    left: 430px;
     text-transform: uppercase;
     font-size: 20px;
+    margin-top: 10px;
 }
 
 .contributeImgIcon  {
@@ -163,11 +164,19 @@ body, html {
         left: 120px;
     }
 
+    .userDetailsOnPage   {
+        left: 350px;
+    }
+
 }
 
 @media only screen and (max-width: 550px) {
     .profilePicture {
         left: 60px;
+    }
+
+    .userDetailsOnPage   {
+        left: 290px;
     }
 
 }
@@ -184,15 +193,8 @@ body, html {
         width: 30%;
     }
     
-    .userFullName   {
+    .userDetailsOnPage   {
         top: 140%;
-        left: auto;
-        width: 100%;
-        text-align: center;
-    }
-
-    .imgContributed   {
-        top: 152%;
         left: auto;
         width: 100%;
         text-align: center;

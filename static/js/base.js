@@ -26,14 +26,14 @@ function randomcolor()  {
 $(".bars-u").click(()=>{
     $(".navContent-u").slideToggle();
 });
-// to read the screen width and set display block if px > 900
+// to read the screen width and set display block if px > 1200
 $(document).ready(()=> {
     function checkWidth() {
         var windowSize = $(window).width();
 
-        if (windowSize >= 1150) {
+        if (windowSize >= 1200) {
             $(".navContent-u").css("display", "block");
-        }else if (windowSize < 1150)  {
+        }else if (windowSize < 1200)  {
             $(".navContent-u").css("display", "none");
         }
     }
@@ -52,13 +52,11 @@ $(".dropdown-u").hover(()=>{
 $(".searchArea").focus(()=>{
     var randcolor = randomcolor();
     $(".searchBar").css('border', '2px solid ' + String(randcolor));
-    $(".searchBar").css('box-shadow', "2px 0px 3px " + String(randcolor));
     $(".fa-search").css('color', String(randcolor));
 });
 $(".searchArea").blur(()=>{
     var randcolor = randomcolor();
     $(".searchBar").css('border', '2px solid rgb(226, 226, 226)');
-    $(".searchBar").css('box-shadow', 'none');
     $(".fa-search").css('color', 'white');
 });
 

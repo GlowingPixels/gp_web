@@ -48,13 +48,8 @@
                 </div>
 
                 {% if form.password2.errors %}
-<<<<<<< HEAD
-                <div class="row">
-                    {% render_field form.password2 placeholder=form.password2.errors.as_text %}
-=======
                 <div class="row password2">
-                    {% render_field form.password2 placeholder="Passwords not matching" %}
->>>>>>> 1496c387da921e85a5ad369611a5c1bf3d32ea70
+                    {% render_field form.password2 placeholder=form.password2.errors.as_text %}
                 </div>
                 {% else %}
                 <div class="row password2">
