@@ -19,12 +19,18 @@ if (window.matchMedia("(max-resolution: 192dpi)").matches) {
 $(".backLay").click(function() {
       var src = $( this ).parent('.enlarge').siblings(".imgThumbnails").attr('src_full');
       var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
+      var userLink = $(this).parent('.enlarge').siblings('.postBy').children('a').attr('href');
+      var likes = $(this).attr('likes');
+
       $('.zoomImg').children('img').attr('src', src);
       $('.zoomImg').children('.afterZoomDetails').children('a').html(byName);
+      $('.zoomImg').children('.afterZoomDetails').children('.totalLike').children('span').html(likes);
+
+      $('.zoomImg').children('.afterZoomDetails').children('a').attr('href', userLink);
       $('.zoomImg').fadeIn();
-      $(".overlay").fadeIn();
+      $('.overlay').fadeIn();
       $('body').css('overflow', 'hidden');
-      console.log(byName);
+      // console.log(byName);
 });
 
 $(".overlay").click(()=>{
