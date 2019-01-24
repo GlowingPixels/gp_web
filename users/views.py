@@ -11,10 +11,20 @@ class SignUp(CreateView):
 
 def settings(request):
     if request.method == 'POST':
-        user_form = CustomUserChangeForm(request.POST, instance=request.user)
+        user_form = CustomUserChangeForm(request.POST, request.FILES, instance=request.user)
 
         if user_form.is_valid():
+            if 'profile_pic' in request.FILES:
+                profile_pic = request.FILES['profile_pic']
+                user_form.profile_pic = profile_pic
+                user_form.save(commit=False)
+
+            if 'cover_pic' in request.FILES:
+                cover_pic = request.FILES['cover_pic']
+                user_form.cover_pic = cover_pic
+                user_form.save(commit=False)
             user_form.save()
+
             return HttpResponseRedirect(reverse_lazy('users:profile'))
         else:
             print(user_form.errors)

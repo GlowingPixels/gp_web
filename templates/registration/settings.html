@@ -30,7 +30,12 @@
                 <div class="form-group userID">
                     {% render_field form.instagram_link class="form-control" placeholder="Instagram Profile" %}
                 </div>
-
+                <div class="form-group userID">
+                    {% render_field form.profile_pic class="form-control" name="profile_pic" %}
+                </div>
+                <div class="form-group userID">
+                    {% render_field form.cover_pic class="form-control" name="cover_pic"%}
+                </div>
                 <input type="submit" class="btn btn-primary loginBtn" value="Update">
             </form>
         </div>
