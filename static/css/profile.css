@@ -25,7 +25,7 @@ body, html {
 .profileContainer    {
     width: 100%;
     position: relative;
-    margin-bottom: 500px;
+    margin-bottom: 300px;
 }
 
 .coverImgContainer  {
@@ -158,6 +158,31 @@ body, html {
     opacity: 1;
 } 
 
+/* contribute Area */
+.contributeArea    {
+    position: absolute;
+    top: 150%;
+    left: 48%;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 1px gray;
+    transition: 3s;
+}
+
+.fa-plus    {
+    font-size: 80px;
+    color: rgba(135, 135, 196, 0.794);
+    transition: 3s;
+}
+
+/* hr style */
+hr {
+    border: 0;
+    height: 2px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 
 @media only screen and (max-width: 900px) {
     .profilePicture {
@@ -207,5 +232,15 @@ body, html {
     .socialLinks    {
         font-size: 180%;
         bottom: 2%;
+    }
+
+    .contributeArea     {
+        left: 45%;
+        top: 180%;
+        padding: 5px 7px;
+    }
+
+    .fa-plus    {
+        font-size: 40px;
     }
 }

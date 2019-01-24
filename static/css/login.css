@@ -99,14 +99,9 @@ footer {
 }
 
 /* code for reset_done page */
-.textpic    {
-    margin: -4px 0;
-    display: block;
-    letter-spacing: 2px;
-}
-
-.textPicPosition    {
-    text-align: center;
-    font-size: 130%;
+.textPic    {
+    line-height: 12px;
+    width: 500px;
+    margin: 0 auto;
     margin-top: 50px;
 }
