@@ -17,7 +17,7 @@ if (window.matchMedia("(max-resolution: 192dpi)").matches) {
 
 // img zoom in-out code
 $(".backLay").click(function() {
-      var src = $( this ).parent('.enlarge').siblings(".imgThumbnails").attr('src_full');
+      var src = $(this).parent('.enlarge').siblings('.imgThumbnails').attr('src_full');
       var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
       var userLink = $(this).parent('.enlarge').siblings('.postBy').children('a').attr('href');
       var likes = $(this).attr('likes');
@@ -42,7 +42,7 @@ $(".overlay").click(()=>{
 //code only for phones  
 if (window.matchMedia("(min-resolution: 192dpi)").matches) {
     //code for resizing of img in phone mode
-    $(".col-u").each(function(index){
+    $(".col-u").each(function(){
       var fullsrc = $(this).children(".imgThumbnails").attr("src_full");
       $(this).children('.imgThumbnails').attr('src', fullsrc);
     });
@@ -59,7 +59,6 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
       //console.log("clicked");
       console.log(byName);
     });   
-    
 }
 
 
