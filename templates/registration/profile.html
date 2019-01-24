@@ -33,18 +33,19 @@
             <!-- edit icon -->
             <i class="fas fa-pencil-alt imgChangeIcon"></i>
             <div class="picEdit">
-            <form action="{% url 'users:settings' %}" enctype="multipart/form-data" method="post">
+            <form action="{% url 'users:profile' %}" enctype="multipart/form-data" method="post">
             {% csrf_token %}
                 <span class="profilePicChange">
                     <i class="fas fa-image"></i>
                     <span>Profile</span>
-                    {% render_field form.profile_pic class="form-control" name="profile_pic" %}
+                    <input type="file" name="profile_pic" accept="image/*" class="form-control" id="id_profile_pic">
                 </span>
                 <span class="coverPicChange">
                     <i class="fas fa-image"></i>
-                    {% render_field form.cover_pic class="form-control" name="cover_pic" %}
+                    <span>Cover</span>
+                    <input type="file" name="cover_pic" accept="image/*" class="form-control" id="id_cover_pic">
                 </span>
-            <input type="submit" class="btn btn-primary" value="Update">
+             <input type="submit" class="btn btn-primary" value="Update">
             </form>
             </div>
 
@@ -67,7 +68,7 @@
                 </div>
             </div>
 
-            <a href="#">
+            <a href="{% url 'gallery:addImage' %}">
                 <div class="contributeArea">
                     <i class="fas fa-plus"></i>
                 </div>

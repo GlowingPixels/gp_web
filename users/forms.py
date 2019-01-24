@@ -11,4 +11,10 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = ('first_name', 'last_name', 'instagram_link', 'facebook_link', 'profile_pic', 'cover_pic')
+        fields = ('first_name', 'last_name', 'instagram_link', 'facebook_link',)
+
+class CustomUserImageChangeForm(UserChangeForm):
+    
+    class Meta:
+        model = CustomUser
+        fields = ('profile_pic', 'cover_pic')

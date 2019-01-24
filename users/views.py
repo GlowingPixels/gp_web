@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.shortcuts import render, HttpResponseRedirect
-from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm, CustomUserImageChangeForm
 from .models import CustomUser
 
 class SignUp(CreateView):
@@ -11,7 +11,7 @@ class SignUp(CreateView):
     
 def profile(request):
     if request.method == 'POST':
-        user_form = CustomUserChangeForm(request.POST, request.FILES, instance=request.user)
+        user_form = CustomUserImageChangeForm(request.POST, request.FILES, instance=request.user)
 
         if user_form.is_valid():
             if 'profile_pic' in request.FILES:
@@ -28,7 +28,7 @@ def profile(request):
             return HttpResponseRedirect(reverse_lazy('users:profile'))
 
     elif request.method == "GET":
-        user_form = CustomUserChangeForm(instance=request.user)
+        user_form = CustomUserImageChangeForm(instance=request.user)
 
         return render(request, 'registration/profile.html', {
             'form': user_form
@@ -37,22 +37,11 @@ def profile(request):
 
 
 def settings(request):
-    
     if request.method == 'POST':
-        user_form = CustomUserChangeForm(request.POST, request.FILES, instance=request.user)
+        user_form = CustomUserChangeForm(request.POST, instance=request.user)
 
         if user_form.is_valid():
-            if 'profile_pic' in request.FILES:
-                profile_pic = request.FILES['profile_pic']
-                user_form.profile_pic = profile_pic
-                user_form.save(commit=False)
-
-            if 'cover_pic' in request.FILES:
-                cover_pic = request.FILES['cover_pic']
-                user_form.cover_pic = cover_pic
-                user_form.save(commit=False)
             user_form.save()
-
             return HttpResponseRedirect(reverse_lazy('users:profile'))
         else:
             print(user_form.errors)
