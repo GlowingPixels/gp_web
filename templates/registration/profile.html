@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% block title %}User Profile{% endblock %}
 {% block content %}
+{% load widget_tweaks %}
 
     <!-- css link -->
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
@@ -11,7 +12,7 @@
             {% if user.profile_pic %}
             <img src="{{ user.profile_pic.url }}" alt="Image" class="profilePicture">
             {% else %}
-            <img src="{% static 'images/img.jpg' %}" alt="Image" class="profilePicture">
+            <img src="{% static 'images/profile.jpg' %}" alt="Image" class="profilePicture">
             {% endif %}
 
             {% if user.cover_pic %}
@@ -20,7 +21,7 @@
             </div>
             {% else %}
             <div class="coverImgContainer">
-                <img src="{% static 'images/coverImg.jpg' %}" alt="Image" class="coverImg">
+                <img src="{% static 'images/cover.jpg' %}" alt="Image" class="coverImg">
             </div>
             {% endif %}
             
@@ -32,14 +33,20 @@
             <!-- edit icon -->
             <i class="fas fa-pencil-alt imgChangeIcon"></i>
             <div class="picEdit">
+            <form action="{% url 'users:profile' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
                 <span class="profilePicChange">
                     <i class="fas fa-image"></i>
                     <span>Profile</span>
+                    <input type="file" name="profile_pic" accept="image/*" class="form-control" id="id_profile_pic">
                 </span>
                 <span class="coverPicChange">
                     <i class="fas fa-image"></i>
                     <span>Cover</span>
+                    <input type="file" name="cover_pic" accept="image/*" class="form-control" id="id_cover_pic">
                 </span>
+             <input type="submit" class="btn btn-primary" value="Update">
+            </form>
             </div>
 
             <!-- social links icon -->
@@ -61,7 +68,7 @@
                 </div>
             </div>
 
-            <a href="#">
+            <a href="{% url 'gallery:addImage' %}">
                 <div class="contributeArea">
                     <i class="fas fa-plus"></i>
                 </div>
