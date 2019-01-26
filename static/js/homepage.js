@@ -20,7 +20,7 @@ $(".backLay").click(function() {
       var src = $(this).parent('.enlarge').siblings('.imgThumbnails').attr('src_full');
       var byName = $(this).parent('.enlarge').siblings('.postBy').children('a').children('span').html();
       var userLink = $(this).parent('.enlarge').siblings('.postBy').children('a').attr('href');
-      var likes = $(this).attr('likes');
+      var likes = $(this).parent('.enlarge').siblings('.lovedBtn').attr('likes');
 
       $('.zoomImg').children('img').attr('src', src);
       $('.zoomImg').children('.afterZoomDetails').children('a').html(byName);
@@ -72,8 +72,13 @@ $(()=>{
           data: {},
           dataType: "html",
           success: (res,status,xhr)=> {
-            if(res=="authenticated"){
-              $(this).toggleClass("afterLoved");
+            if (res=="Liked"){
+              $(this).addClass("afterLoved");
+              $(this).attr('likes', Number($(this).attr('likes'))+1);
+            }
+            else if (res=="Unliked") {
+              $(this).removeClass("afterLoved");
+              $(this).attr('likes', Number($(this).attr('likes'))-1);
             }
             else{
               window.location.href = '/accounts/login/';

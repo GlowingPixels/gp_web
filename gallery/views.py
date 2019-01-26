@@ -1,22 +1,22 @@
 """A basic view for the Gallery App"""
-
+from django.db.models import Count
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.views import View
+
 from .models import Gallery, ImageCategory
 from .forms import ImageCreateForm
-from django.contrib.auth.decorators import login_required
 
 def gallery(req, category=None):
     """
     Default view that renders all the images
     in a category
     """
-
-    if(category!=None):
+    if(category != None):
         tag = ImageCategory.objects.filter(category=category)
-        images = Gallery.objects.filter(tag__in=tag)
+        images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(tag__in=tag)[:20]
     else:
-        images = Gallery.objects.all()
+        images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count')[:20]
 
     context = {
             'images': images,
@@ -24,7 +24,7 @@ def gallery(req, category=None):
             }
     return render(req, 'gallery/homepage.html', context=context)
   
-    
+
 
 def gallery360(req, category):
     """
@@ -55,10 +55,12 @@ def add_likes(request, id):
     image = Gallery.objects.get(id=id)
     if user.pic_liked.filter(id=image.id).exists():
         image.likes.remove(user)
+        image.save()
+        return HttpResponse("Unliked")
     else:
         image.likes.add(user)
-    image.save()
-    return HttpResponse("authenticated")
+        image.save()
+        return HttpResponse("Liked")
 
 @login_required
 def has_liked(request, id):

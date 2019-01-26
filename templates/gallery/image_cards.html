@@ -1,0 +1,39 @@
+{% for img in images %}
+<!-- img cards -->
+<!--Homepage.js and Homepage.css is required for proper functioning-->
+<div class="col-u">
+    {% if img.image %}
+    <img class="imgThumbnails" src="{{ img.image.thumbnail.url }}" alt="Images"  src_full="{{ img.image.url }}">
+    <div class="albumName">
+        <a href="{% url 'gallery:gallery' img.tag %}">
+            <span class="onThumbnail">
+                {{ img.tag }}
+            </span>
+        </a>
+    </div>
+    
+    <div class="enlarge">
+        <div class="backLay onThumbnail" likes="{{ img.likes.count }}">
+            <i class="fas fa-expand"></i>
+        </div>
+    </div>
+
+    <div class="postBy">
+        <a href="{% url 'users:fellow_user' img.contributor %}">
+            <span class="onThumbnail">
+                By {{ img.contributor }}
+            </span>
+        </a>
+    </div>
+
+    <div class="publishedOn">
+        <span class="onThumbnail">Published on {{ img.date }}</span>
+    </div>
+    
+        <div class="lovedBtn" id="/like/{{ img.id }}/"><!--The ID of the Love button acts as an urlpattern for the ajax call-->
+        <a style="text-decoration:none"><i class="fas fa-heart"></i></a>
+    </div>
+    {% endif %}
+
+</div>
+{% endfor %}
