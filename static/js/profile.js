@@ -27,3 +27,12 @@ function randomcolor()  {
     var b = Math.floor(Math.random() * 256);
     return "rgba("+r+", "+g+", "+b+")"
 }
+
+
+//code only for phones  
+if (window.matchMedia("(min-resolution: 192dpi)").matches) {
+    var imgWidth = $(".profilePicture").width();
+    console.log(imgWidth);
+    $(".profilePicture").css("height", String(imgWidth) + "px");
+
+}
