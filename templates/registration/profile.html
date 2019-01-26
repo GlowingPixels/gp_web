@@ -51,12 +51,25 @@
 
             <!-- social links icon -->
             <div class="socialLinks">
+                {% if user.facebook_link %}
                 <a href="{{ user.facebook_link }}">
                     <i class="fab fa-facebook-square"></i>
                 </a>
+                {% else %}
+                <a href="{% url 'users:settings' %}">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                {% endif %}
+                {% if user.instagram_link %}
                 <a href="{{ user.instagram_link }}">
                     <i class="fab fa-instagram"></i>
                 </a>
+                {% else %}
+                <a href="{% url 'users:settings' %}">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                {% endif %}
+                
             </div>
             <div class="userDetailsOnPage">
                 <div class="userFullName">
