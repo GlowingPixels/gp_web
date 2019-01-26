@@ -13,41 +13,39 @@
 
     <!--form-->
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10">
                 <div class="formbody">
 
                     <p style="font-size: 50px">Submit Your ART</p>
                     <form enctype="multipart/form-data" method="POST">
                         {% csrf_token %}
 
-                        <div class="row d1">
-                            <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="row">
+                            
                                 {% render_field form.tag class="form-control" placeholder="Category" %}
-                            </div>                                
-                            <div class="col-lg-6 col-sm-12 col-md-6">
+                                                      
+                        
                                 {% render_field form.label class="form-control" placeholder="Name your Art" %}
-                            </div>
+                        
                         </div>
 
 
-                        <div class="row d1">
-                            <div class="col">
+                        <div class="row">
+                            
                                 {% render_field form.descriptions class="form-control" placeholder="A vivid art description" %}
-                            </div>
+                            
                         </div>
 
              
 
-                        <div class="input-group mb-3 d1">              
-                            <div class="input-group-prepend">
+                               
+                            <div style="display:none">
                                 <button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" title="Your Masterpiece">Upload</button>
                             </div>
                             <div class="custom-file">
                                 {% render_field form.image class="custom-file-label" id="inputGroupFile03" %}
                                 <label class="custom-file-label" for="inputGroupFile03"></label>
                             </div>
-                        </div>
+                        
                                             
                         <div class="d1">
                             <input type="submit" class="btn btn-primary" value="Publish">
@@ -56,7 +54,5 @@
                     </form>
 
                 </div>
-            </div>
-        </div>
     </div>
 {% endblock %}

@@ -32,17 +32,15 @@
 
             <!-- edit icon -->
             <i class="fas fa-pencil-alt imgChangeIcon"></i>
+
             <div class="picEdit">
             <form action="{% url 'users:profile' %}" enctype="multipart/form-data" method="post">
-            {% csrf_token %}
+                {% csrf_token %}
                 <span class="profilePicChange">
-                    <i class="fas fa-image"></i>
-                    <span>Profile</span>
                     <input type="file" name="profile_pic" accept="image/*" class="form-control" id="id_profile_pic">
                 </span>
+
                 <span class="coverPicChange">
-                    <i class="fas fa-image"></i>
-                    <span>Cover</span>
                     <input type="file" name="cover_pic" accept="image/*" class="form-control" id="id_cover_pic">
                 </span>
              <input type="submit" class="btn btn-primary" value="Update">
