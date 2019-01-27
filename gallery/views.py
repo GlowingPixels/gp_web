@@ -21,18 +21,8 @@ def gallery(req, category=None):
     context = {
             'images': images,
             'category': category,
-            }
+        }
     return render(req, 'gallery/homepage.html', context=context)
-  
-
-
-def gallery360(req, category):
-    """
-    A generic view Function that renders the 360 images
-    """
-    image360 = {'images': Gallery.objects.filter(is_360=True).filter(tag=category)}
-
-    return render(req, 'gallery/gallery360.html', image360)
 
 @login_required
 def create_image(request):

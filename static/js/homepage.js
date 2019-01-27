@@ -51,13 +51,18 @@ if (window.matchMedia("(min-resolution: 192dpi)").matches) {
     $(".imgThumbnails").click(function() {
       var src = $( this ).attr('src_full');
       var byName = $(this).siblings('.postBy').children('a').children('span').html();
+      var userLink = $(this).siblings('.postBy').children('a').attr('href');
+      var likes = $(this).siblings('.lovedBtn').attr('likes');
+      $('.zoomImg').children('.afterZoomDetails').children('.totalLike').children('span').html(likes);
+
+      $('.zoomImg').children('.afterZoomDetails').children('a').attr('href', userLink);
       $('.zoomImg').children('img').attr('src', src);
       $('.zoomImg').children('.afterZoomDetails').children('a').html(byName);
       $('.zoomImg').fadeIn();
       $(".overlay").fadeIn();
       $('body').css('overflow', 'hidden');
       //console.log("clicked");
-      console.log(byName);
+      // console.log(byName);
     });   
 }
 
