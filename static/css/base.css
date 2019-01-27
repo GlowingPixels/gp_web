@@ -1,256 +1,155 @@
-body, html {
+html, body  {
+    margin: 0;
     height: 100%;
-    margin: 0;
 }
 
-/* styling the navbar */
-.navbar-u {
-    padding: 35px 0;
-    font-size: 20px;
+/* navbar css */
+.homepage_navbar    {
     position: relative;
-    box-shadow: 0 1px 6px #c2c1c1b6;
-    z-index: 1;
-}
-
-.brand-u  {
-    display: inline;
-    margin-left: 20px;
-    font-size: 30px;
-}
-
-.navContent-u {
-    display: inline;
-    margin-left: 50px;
-    position: absolute;
-    right: 20px;
-    bottom: 40px;
-}
-
-.navItem-u    {
-    display: inline;
-}
-
-.navItem-u a  {
-    color: black;
-    text-decoration: none;
-    padding: 2px 7px;
-    background-color: rgba(199, 202, 202, 0);
-    border-radius: 23px;
-    transition: 500ms;
-}
-
-.navItem-u a i    {
-    font-size: 18px;
-}
-
-.bars-u   {
-    display: none;
-
-}
-
-.dropdown-u   {
-    padding-bottom: 13px;
-}
-
-.dropdownContent-u    {
-    display: none;
-    position: absolute;
-    width: 120px;
     text-align: center;
-    background: beige;
-    border-radius: 15px;
-    margin-top: 10px;
+    background: #eeeeee; /* for the browser that does not support gradient */
+    background-image: linear-gradient(#f3f1f1, #eeeeee, #e6e3e3);
+    padding: 15px 0;
 }
 
-.dropdownContent-u a  {
-    display: block;
-}
-
-.textdeco-u   {
-    margin: 0 -3px;
-}
-
-/* search panel */
-.searchContainer    {
+.burger_icon    {
     position: absolute;
-    right: 650px;
-    top: 40px;
-}
-
-.searchBar  {
-    border: 2px solid rgb(226, 226, 226);
-    background: rgb(226, 226, 226);
-    padding: 6px;
-    border-radius: 20px;
-    color: white;
     display: inline;
-    transition: 200ms;
+    left: 20px;
+    font-size: 160%;
+    top: 30%;
+    cursor: pointer;
 }
 
-.searchArea {
-    border: none;
-    outline: none;
-    background: rgb(226, 226, 226);
-}
-
-.searchContent  {
-    display: none;
-    position: absolute;
-    width: 210px;
-    text-align: center;
-    background: beige;
-    border-radius: 15px;
-    margin-top: 10px;
-}
-
-.searchContent a    {
-    text-decoration: none;
-}
-
-/* hover effects */
-.navItem-u a:hover    {
-    background-color: rgb(119, 117, 117);
-    color: white;
-    transition: 500ms;
-}
-
-
-/* for tablet mode */
-@media only screen and (max-width: 1200px) {
-    /* code for navbar collapse */
-    .navbar-u {
-        padding: 15px 0;
-    }
-
-    .brand-u  {
-        font-size: 25px;
-    }
-
-    .navContent-u {
-        display: none;
-        position: static;
-    }
+.brand_name {
+    display: inline;
+    font-size: 180%;
     
-    .bars-u  {
-        display: block;
-        float: right;
-        margin-right: 20px;
-        font-size: 25px;
-    }
-
-    .navItem-u    {
-        margin: 8px 0;
-        display: block;
-    }
-
-    .user-u   {
-        float: left;
-    }
-
-    .showItems-u  {
-        display: block !important;
-    }
-
-    .dropdownContent-u  {
-        margin-top: 5px;
-    }
-
-    .searchContainer  {
-        right: 90px;
-        top: 18px;
-    }
-
-  }
-
-  /* to hide search area */
-  @media only screen and (max-width: 624px) {
-      .searchBar   {
-          display: none;
-      }
-      .searchContent    {
-          display: none;
-      }
-  }
-
-  /* bottomBar */
-
-.bodyBottom {
-    padding: 20px 3% 20px 3%;
-    background: #263238;
-    color: #546E7A;
-    border-top: 1px rgb(197, 194, 194) solid;
 }
 
-.lk   {
-    color: #9e9e9e;
-    padding: 0;
+.nav_content    {
     display: inline;
+    position: absolute;
+    right: 10px;
+    top: 36%;
 }
 
-.lk:hover   {
-    color: #87919b;
+.nav_content a  {
+    text-decoration: none;
+    padding: 0 7px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
 }
 
-#endB   {
-    display: inline-block;
-    margin: 0;
-    font-size: 80%;
+.burger_icon:hover,
+.nav_content > a:hover  {
+    color: rgb(10, 177, 177);
+}
+
+.nav_content .side_line {
+    border-right: 2px solid black;
+}
+
+@media screen and (max-width: 767px)    {
+    .burger_icon    {
+        font-size: 130%;
+    }
+
+    .brand_name {
+        font-size: 110%;
+    }
+
+    .nav_content    {
+        top: 38%;
+        font-size: 60%;
+    }
+}
+
+/* css for category container */
+.category_container {
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
 }
 
-#sp4    {
-    float: right;
+.category_side  {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: white;
+    top: 0;
 }
 
-@media only screen and (max-width: 450px) {
-    #endB   {
-        text-align: center;
+.screen_side    {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.281);
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.menu_heading   {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 170%;
+}
+
+.category_list  {
+    top: 50px;
+    left: 50px;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+}
+
+.list_items {
+    margin: 5px 0;
+    font-size: 120%;
+}
+
+.list_items > a {
+    text-decoration: none;
+    color: black;
+}
+
+.list_items:hover a  {
+    color: rgb(10, 177, 177);
+}
+
+@media screen and (max-width: 1300px){
+    .category_side  {
+        width: 30%;
     }
 
-    #sp1   {
-        display: block;
-    }
-
-    #sp4    {
-        margin-top: 1%;
-        display: block;
-        float: none;
+    .screen_side    {
+        width: 70%;
     }
 }
-/* code for phones */
-@media (min-resolution: 192dpi)   {
-    .brand-u    {
-        font-size: 100%;
+
+@media screen and (max-width: 767px)    {
+    .category_side  {
+        width: 80%;
     }
 
-    #endB   {
-        text-align: center;
+    .screen_side    {
+        width: 20%;
     }
 
-    #sp1   {
-        display: block;
+    .menu_heading   {
+        left: 20px;
+        font-size: 140%;
     }
 
-    #sp4    {
-        margin-top: 1%;
-        display: block;
-        float: none;
+    .category_list  {
+        left: 20px;
     }
 
-    .searchContainer    {
-        right: 15%;
-        top: 13px;
-    }
-
-    .searchBar  {
-        display: block;
-        padding: 3px;
-        font-size: 80%;
-    }
-
-    .searchArea {
-        display: none;
-        width: 0;
-        transition: 600ms;
+    .list_items {
+        font-size: 120%;
     }
 }

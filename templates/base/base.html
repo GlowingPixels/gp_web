@@ -1,143 +1,62 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>GlowingPixels</title>
-        <!--tabIcon-->
-        <link rel="icon" href="{% static "images/icon.png" %}" type="image/x-icon">
-        <!-- fontAwasome CDNs -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-        <!-- css file link -->
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CDN for font Awaesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
+        crossorigin="anonymous">
+        <!-- CDN for google font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <!-- link for homepage css -->
+        <link rel="stylesheet" href="homepage.css">
     </head>
     <body>
-        <!-- navbar -->
-        <div class="navbar-u">
-            <!-- nav brand & logo -->
-            <div class="brand-u">
-                <a href="{% url 'gallery:homepage' %}" style="text-decoration:none">
-                    <i class="fas fa-spa" style="transition:50ms;"></i>
-                    <span class="brandName-u">
-
-                        <span class="textdeco-u" id="let1">G</span>
-                        <span class="textdeco-u" id="let2">L</span>
-                        <span class="textdeco-u" id="let3">O</span>
-                        <span class="textdeco-u" id="let4">W</span>
-                        <span class="textdeco-u" id="let5">I</span>
-                        <span class="textdeco-u" id="let6">N</span>
-                        <span class="textdeco-u" id="let7">G</span>
-                        <span>&nbsp;</span>
-                        <span class="textdeco-u" id="let8">P</span>
-                        <span class="textdeco-u" id="let9">I</span>
-                        <span class="textdeco-u" id="let10">X</span>
-                        <span class="textdeco-u" id="let11">E</span>
-                        <span class="textdeco-u" id="let12">L</span>
-                        <span class="textdeco-u" id="let13">S</span>
-
-                    </span>
-                </a>
-            </div>
-            <!-- search panel -->
-            <din class="searchContainer">
-                <div class="searchBar">
-                        {% csrf_token %}
-                    <input type="text" placeholder="Search" class="searchArea" id="search">
-                    <i class="fas fa-search" flag="true"></i>
-                </div>
-                <div class="searchContent" id="search_results">
-                    <!-- data to be fetched here -->
-                </div>
-            </din>
-
-            <!-- burger bars -->
-            <div class="bars-u">
+        <!-- navbar for the homepage -->
+        <div class="homepage_navbar">
+            <div class="burger_icon">
                 <i class="fas fa-bars"></i>
             </div>
-            <!-- nav content -->
-            <div class="navContent-u">
-                <div class="navItem-u">
-                    <span class="dropdown-u">
-                        <a href="#" id="catbtn-u">CATEGORY</a>
-                        <div class="dropdownContent-u">
-                            {% for category in categories %}
-                                <a href="{% url 'gallery:gallery' category %}">{{ category }}</a>
-                            {% endfor %}
-                        </div>
-                    </span>
-                </div>
-                <div class="navItem-u">
-                    <a href="#">ABOUT US</a>
-                </div>
-                <div class="navItem-u">
-                    <a href="#">CONTACT</a>
-                </div>
-
-                <!-- client content -->
-                {% if user.is_authenticated %}
-                <!-- <div class="navItem-u">
-                    <a href="{% url 'gallery:addImage' %}">Contribute</a>
-                </div> -->
-                <div class="navItem-u" style="text-transform:uppercase;">
-                    <a href="{% url 'users:profile' %}">{{ user.first_name }}</a>
-                </div>
-                <div class="navItem-u">
-                    <a href="{% url 'logout' %}">LOGOUT</a>
-                </div>
-                {% else %}
-                <div class="navItem-u">
-                    <a href="{% url 'login' %}">LOGIN</a>
-                </div>
-                <div class="navItem-u">
-                    <a href="{% url 'users:signup' %}">SIGNUP</a>
-                </div>
-                {% endif %}
+            <div class="brand_name">
+                glowingpixels
+            </div>
+            <div class="nav_content">
+                <a href="#" class="side_line">
+                    <span>Login</span>
+                </a>
+                <a href="#">
+                    <span>Sign  Up</span>
+                </a>
             </div>
         </div>
 
-     
-    {% block content %}
-
-
-
-
-    {% endblock %}
-
-        <!--bottonBar-->
-        <footer>
-            <div class="bodyBottom">   
-                <div id="endB">
-                    <span id="sp1">
-                        <span>Clicked with</span>
-                        <i class="fas fa-heart"></i>
-                        <span>and</span>
-                        <i class="fas fa-camera"></i>
-                    </span>
-                    <span id="sp4">
-                        <span id="sp2">
-                            <span>{% now "Y" %}</span>
-                            <i class="far fa-copyright"></i>
-                            <span>glowingpixels.in</span>
-                        </span>
-                        <span id="sp3">
-                            <a href="#" class="lk">Terms</a>
-                            <span>and</span>
-                            <a href="#" class="lk">Privacy</a>
-                        </span>
-                    </span>
+        <!-- side bar that contains category -->
+        <div class="category_container">
+            <div class="category_side">
+                <div class="category">
+                    <span class="menu_heading">Image Category</span>
+                    <ul class="category_list">
+                        <li class="list_items"><a href="#">Cats</a></li>
+                        <li class="list_items"><a href="#">Dogs</a></li>
+                        <li class="list_items"><a href="#">Buildings</a></li>
+                        <li class="list_items"><a href="#">Outdoor</a></li>
+                        <li class="list_items"><a href="#">Indoor</a></li>
+                        <li class="list_items"><a href="#">Festive</a></li>
+                        <li class="list_items"><a href="#">Animals</a></li>
+                        <li class="list_items"><a href="#">Pujo</a></li>
+                        <li class="list_items"><a href="#">Durga</a></li>
+                        <li class="list_items"><a href="#">Lost It</a></li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+            <div class="screen_side">
 
-    <!-- script&CDNs -->
-    {% block scripts %}
-        <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-        ></script>
-        <!-- js file link -->
-        <script src="{% static 'js/base.js' %}"></script>
-    {% endblock %}
+            </div>
+        </div>
 
+        <!-- links for the script tag -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="homepage.js"></script>
     </body>
 </html>
