@@ -1,16 +1,17 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CDN for font Awaesome -->
+        <link rel="icon" href="{% static "images/icon.png" %}" type="image/x-icon">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
         crossorigin="anonymous">
         <!-- CDN for google font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!-- link for homepage css -->
-        <link rel="stylesheet" href="homepage.css">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
         <!-- navbar for the homepage -->
@@ -19,15 +20,26 @@
                 <i class="fas fa-bars"></i>
             </div>
             <div class="brand_name">
-                glowingpixels
+                <a href="{% url 'gallery:homepage' %}">glowingpixels</a>
             </div>
             <div class="nav_content">
-                <a href="#" class="side_line">
-                    <span>Login</span>
-                </a>
-                <a href="#">
-                    <span>Sign  Up</span>
-                </a>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'users:profile' %}" class="side_line">
+                        {{ user.first_name }}
+                    </a>
+                    <a href="{% url 'logout' %}">
+                        <span>Logout</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="side_line">
+                        <span>Login</span>
+                    </a>
+                    <a href="{% url 'users:signup' %}">
+                        <span>Sign  Up</span>
+                    </a>
+                {% endif %}
+
             </div>
         </div>
 
@@ -37,26 +49,29 @@
                 <div class="category">
                     <span class="menu_heading">Image Category</span>
                     <ul class="category_list">
-                        <li class="list_items"><a href="#">Cats</a></li>
-                        <li class="list_items"><a href="#">Dogs</a></li>
-                        <li class="list_items"><a href="#">Buildings</a></li>
-                        <li class="list_items"><a href="#">Outdoor</a></li>
-                        <li class="list_items"><a href="#">Indoor</a></li>
-                        <li class="list_items"><a href="#">Festive</a></li>
-                        <li class="list_items"><a href="#">Animals</a></li>
-                        <li class="list_items"><a href="#">Pujo</a></li>
-                        <li class="list_items"><a href="#">Durga</a></li>
-                        <li class="list_items"><a href="#">Lost It</a></li>
+                    {% for category in categories %}
+                        <li class="list_items"><a href="{% url 'gallery:gallery' category %}">{{ category }}</a></li>            
+                    {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="screen_side">
-
             </div>
         </div>
 
-        <!-- links for the script tag -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="homepage.js"></script>
+    {% block content %}
+
+
+
+
+    {% endblock %}
+
+
+<!-- links for the script tag -->
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- js file link -->
+    <script src="{% static 'js/base.js' %}"></script>
+    {% endblock %}
     </body>
 </html>
