@@ -32,8 +32,6 @@ class Gallery(models.Model):
     descriptions = models.TextField(max_length=500, blank=True)
     date = models.DateField(auto_now=True)
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='pic_liked')
-    is_360 = models.BooleanField(default=False)
-    image_360Link = models.URLField(max_length=500, blank=True)
 
     class Meta:
 
