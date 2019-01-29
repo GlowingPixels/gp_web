@@ -1,6 +1,7 @@
 html, body  {
     margin: 0;
     height: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* navbar css */
@@ -16,15 +17,19 @@ html, body  {
     position: absolute;
     display: inline;
     left: 20px;
-    font-size: 160%;
+    font-size: 140%;
     top: 30%;
     cursor: pointer;
 }
 
 .brand_name {
     display: inline;
-    font-size: 180%;
-    
+    font-size: 160%;
+}
+
+.brand_name > a {
+    color: black;
+    text-decoration: none;
 }
 
 .nav_content    {
@@ -39,10 +44,15 @@ html, body  {
     padding: 0 7px;
     color: black;
     font-family: 'Open Sans', sans-serif;
+    font-size: 90%;
 }
 
 .burger_icon:hover,
 .nav_content > a:hover  {
+    color: rgb(10, 177, 177);
+}
+
+.nav_content a:active   {
     color: rgb(10, 177, 177);
 }
 
@@ -66,37 +76,34 @@ html, body  {
 }
 
 /* css for category container */
-.category_container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: none;
-}
 
 .category_side  {
-    position: absolute;
+    position: fixed;
     width: 20%;
     height: 100%;
     background: white;
     top: 0;
+    left: -70%;
+    transition: 200ms;
+    z-index: 2;
 }
 
 .screen_side    {
-    position: absolute;
-    width: 80%;
+    position: fixed;
+    width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.281);
     top: 0;
-    right: 0;
     cursor: pointer;
+    display: none;
+    z-index: 1;
 }
 
 .menu_heading   {
     position: absolute;
     top: 20px;
     left: 50px;
-    font-size: 170%;
+    font-size: 150%;
 }
 
 .category_list  {
@@ -121,23 +128,15 @@ html, body  {
     color: rgb(10, 177, 177);
 }
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1200px){
     .category_side  {
         width: 30%;
-    }
-
-    .screen_side    {
-        width: 70%;
     }
 }
 
 @media screen and (max-width: 767px)    {
     .category_side  {
-        width: 80%;
-    }
-
-    .screen_side    {
-        width: 20%;
+        width: 70%;
     }
 
     .menu_heading   {
@@ -152,4 +151,67 @@ html, body  {
     .list_items {
         font-size: 120%;
     }
+}
+
+/* css for footer */
+.footer_container   {
+    background: #212529;
+    position: relative;
+}
+
+.details_sections_col   {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bottom_formalities {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(19, 15, 31);
+    position: relative;
+}
+
+.littel_love    {
+    color: #868e96;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 50px;
+}
+
+.copy_right {
+    color: #868e96;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+}
+
+@media screen and (max-width: 1100px)   {
+    .details_section_col    {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 767px)    {
+    .details_section_col    {
+        width: 90%;
+    }
+
+    .bottom_formalities {
+        text-align: center;
+    }
+
+    .littel_love, .copy_right   {
+        position: unset;
+        display: block;
+        font-size: 80%;
+
+    }
+
+    .littel_love    {
+        margin: 0;
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 5px;
+    }
+        
 }

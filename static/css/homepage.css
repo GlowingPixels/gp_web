@@ -1,0 +1,7 @@
+/* search container css */
+.search_home_container  {
+    width: 100%;
+    height: 300px;
+    background: rgb(240, 206, 174);
+    background-image: linear-gradient(to bottom right, rgb(213, 220, 233), rgb(245, 224, 205), rgb(240, 206, 174), rgb(245, 224, 205), rgb(235, 198, 232));
+}

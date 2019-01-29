@@ -1,4 +1,4 @@
-{% extends "base/base.html" %}
+{% extends "base/base_homepage.html" %}
 {% load staticfiles  %}
 
 <title>
@@ -8,73 +8,16 @@
 </title>
 
 {% block content %}
+    <!-- css link -->
     <link href="{% static "css/homepage.css" %}" rel="stylesheet">
-    {% if category %}
-        <p> Category : {{ category }} </p>
-    {% endif %}
-        <div class="bag">
-            <div class="row-u">
-            
-            {% for img in images %}
-                <!-- img cards -->
-                <div class="col-u">
-                    {% if img.image %}
-                    <img class="imgThumbnails" src="{{ img.image.thumbnail.url }}" alt="Images"  src_full="{{ img.image.url }}">
-                    <div class="albumName">
-                        <a href="{% url 'gallery:gallery' img.tag %}">
-                            <span class="onThumbnail">
-                                {{ img.tag }}
-                            </span>
-                        </a>
-                    </div>
-                    
-                    <div class="enlarge">
-                        <div class="backLay onThumbnail">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                    </div>
 
-                    <div class="postBy">
-                        <a href="{% url 'users:fellow_user' img.contributor %}">
-                            <span class="onThumbnail">
-                                By {{ img.contributor }}
-                            </span>
-                        </a>
-                    </div>
+    <!-- search container -->
+    <div class="search_home_container">
 
-                    <div class="publishedOn">
-                        <span class="onThumbnail">Published on {{ img.date }}</span>
-                    </div>
-                    
-                    <div class="lovedBtn" id="/like/{{ img.id }}/" likes="{{ img.likes.count }}"><!--The ID of the Love button acts as an urlpattern for the ajax call-->
-                        <a style="text-decoration:none"><i class="fas fa-heart"></i></a>
-                    </div>
-                   {% endif %}
+    </div>
 
-                </div>
-                {% endfor %}
 
-            </div>
-        </div>
-
-        <!-- stuff after onClick zoom -->
-        <div class="overlay"></div>
-        <div class="zoomImg">
-            <img src="#" alt="image" class="imgProperty">
-            <div class="afterZoomDetails">
-                <a href="#" class="postByName"></a>
-                <div class="totalLike">
-                    <i class="fas fa-heart"></i>
-                    <span></span> <!--To render Likes count-->
-                </div>
-                <div class="download">
-                    DOWNLOAD<!--TODO: implement the Functionality-->
-                    <i class="fas fa-cloud-download-alt"></i>
-                </div>
-            </div>
-        </div>
-
-    {% endblock %}
+{% endblock %}
     
    {% block scripts %}
     {{ block.super }}
