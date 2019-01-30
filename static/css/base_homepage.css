@@ -8,8 +8,6 @@ html, body  {
 .homepage_navbar    {
     position: relative;
     text-align: center;
-    background: #eeeeee; /* for the browser that does not support gradient */
-    background-image: linear-gradient(#f3f1f1, #eeeeee, #e6e3e3);
     padding: 15px 0;
 }
 
@@ -30,6 +28,7 @@ html, body  {
 .brand_name > a {
     color: black;
     text-decoration: none;
+    font-family: 'Cabin', sans-serif;
 }
 
 .nav_content    {
@@ -49,10 +48,6 @@ html, body  {
 
 .burger_icon:hover,
 .nav_content > a:hover  {
-    color: rgb(10, 177, 177);
-}
-
-.nav_content a:active   {
     color: rgb(10, 177, 177);
 }
 
@@ -76,16 +71,16 @@ html, body  {
 }
 
 /* css for category container */
-
 .category_side  {
     position: fixed;
-    width: 20%;
+    width: 25%;
     height: 100%;
     background: white;
     top: 0;
     left: -70%;
     transition: 200ms;
     z-index: 2;
+    font-family: 'Exo', sans-serif;
 }
 
 .screen_side    {
@@ -116,21 +111,39 @@ html, body  {
 
 .list_items {
     margin: 5px 0;
-    font-size: 120%;
+    font-size: 110%;
+    cursor: pointer;
 }
 
-.list_items > a {
+.list_items > span:hover  {
+    color: rgb(10, 177, 177);
+}
+
+/* the folowing 1 class used in js */
+.change_color   {
+    color: rgb(10, 177, 177);
+}
+
+.sub_category   {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin-left: 20px;
+    font-size: 90%;
+}
+
+.sub_category > li > a  {
     text-decoration: none;
     color: black;
 }
 
-.list_items:hover a  {
+.sub_category > li:hover a  {
     color: rgb(10, 177, 177);
 }
 
 @media screen and (max-width: 1200px){
     .category_side  {
-        width: 30%;
+        width: 35%;
     }
 }
 
@@ -140,12 +153,12 @@ html, body  {
     }
 
     .menu_heading   {
-        left: 20px;
+        left: 40px;
         font-size: 140%;
     }
 
     .category_list  {
-        left: 20px;
+        left: 40px;
     }
 
     .list_items {
@@ -159,9 +172,41 @@ html, body  {
     position: relative;
 }
 
+.details_sections_row   {
+    margin: 0 5%;
+}
+
 .details_sections_col   {
     display: inline-block;
     vertical-align: top;
+    width: 14%;
+    margin: 0 5%;
+}
+
+.details_sections_col h3 {
+    color: #6c7075;
+    margin-left: 25px;
+}
+
+.details_sections_col ul {
+    padding: 0;
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+.details_sections_col ul li {
+    margin: 5px 0;
+}
+
+.details_sections_col ul li a   {
+    text-decoration: none;
+    color: #979ca1;
+}
+
+.details_sections_col ul li a i {
+    padding-right: 10px;
+    opacity: 0;
+    transition: 200ms;
 }
 
 .bottom_formalities {
@@ -186,13 +231,13 @@ html, body  {
 }
 
 @media screen and (max-width: 1100px)   {
-    .details_section_col    {
-        width: 40%;
+    .details_sections_col    {
+        width: 30%;
     }
 }
 
 @media screen and (max-width: 767px)    {
-    .details_section_col    {
+    .details_sections_col    {
         width: 90%;
     }
 
