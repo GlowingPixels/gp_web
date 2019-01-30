@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.views import View
 
-from .models import Gallery, ImageCategory
+from .models import Image, ImageCategory
 from .forms import ImageCreateForm
 
 def gallery(req, category=None):
@@ -14,9 +14,9 @@ def gallery(req, category=None):
     """
     if(category != None):
         category_obj = ImageCategory.objects.filter(category=category)
-        images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(category__in=category_obj)[:20]
+        images = Image.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(category__in=category_obj)[:20]
     else:
-        images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count')[:20]
+        images = Image.objects.annotate(like_count=Count('likes')).order_by('-like_count')[:20]
 
     context = {
             'images': images,
@@ -42,7 +42,7 @@ def create_image(request):
 def add_likes(request, id):
     
     user = request.user
-    image = Gallery.objects.get(id=id)
+    image = Image.objects.get(id=id)
     if user.pic_liked.filter(id=image.id).exists():
         image.likes.remove(user)
         image.save()
@@ -56,7 +56,7 @@ def add_likes(request, id):
 def has_liked(request, id):
 
     user = request.user
-    image = Gallery.objects.get(id=id)
+    image = Image.objects.get(id=id)
     if user.pic_liked.filter(id=image.id).exists():
         return HttpResponse("True")
     else:

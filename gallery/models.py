@@ -23,11 +23,11 @@ class ImageCategory(models.Model):
     def __str__(self):
         return str(self.category)
 
-class Tags(models.Model):
+class Tag(models.Model):
     """
     A collection of all tags of an image
     """
-    tag = models.CharField(max_length=25)
+    name = models.CharField(max_length=25)
 
     class Meta:
     
@@ -35,17 +35,19 @@ class Tags(models.Model):
         verbose_name_plural = "Tags"
 
     def __str__(self):
-        return str(self.tag)
+        return str(self.name)
 
-class Gallery(models.Model):
+
+class Image(models.Model):
     """ 
     Main Class of Gallery
     """
-    slug = models.SlugField(max_length=50, unique=True, blank=True)
+    slug = models.SlugField(max_length=50, unique=True, blank=True, help_text="THIS is field is AUTO-GENERATED keep it empty")
     category = models.ForeignKey(ImageCategory, on_delete=models.SET_DEFAULT, default=0)
     contributor = models.ForeignKey(User, on_delete=models.CASCADE)
     image = StdImageField(upload_to='images/', variations={'thumbnail': (786, 1048, True)}, blank=True)
     label = models.CharField(max_length=100, help_text="Name of the image must be related to image attributes")
+    tags = models.ManyToManyField(Tag, blank=True, related_name='images')
     date = models.DateField(auto_now=True)
     likes = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True, related_name='pic_liked')
    
@@ -61,3 +63,5 @@ class Gallery(models.Model):
 
     def __str__(self):
         return "Image: " + str(self.category)
+
+

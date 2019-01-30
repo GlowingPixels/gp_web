@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Gallery
+from .models import Image
 
 class  ImageCreateForm(ModelForm):
 
     class Meta:
-        model = Gallery
+        model = Image
         exclude = ['contributor', ]
