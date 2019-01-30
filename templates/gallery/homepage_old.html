@@ -21,9 +21,9 @@
                     {% if img.image %}
                     <img class="imgThumbnails" src="{{ img.image.thumbnail.url }}" alt="Images"  src_full="{{ img.image.url }}">
                     <div class="albumName">
-                        <a href="{% url 'gallery:gallery' img.tag %}">
+                        <a href="{% url 'gallery:gallery' img.category %}">
                             <span class="onThumbnail">
-                                {{ img.tag }}
+                                {{ img.category }}
                             </span>
                         </a>
                     </div>

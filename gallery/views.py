@@ -13,8 +13,8 @@ def gallery(req, category=None):
     in a category
     """
     if(category != None):
-        tag = ImageCategory.objects.filter(category=category)
-        images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(tag__in=tag)[:20]
+        category_obj = ImageCategory.objects.filter(category=category)
+        images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(category__in=category_obj)[:20]
     else:
         images = Gallery.objects.annotate(like_count=Count('likes')).order_by('-like_count')[:20]
 

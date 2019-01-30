@@ -5,8 +5,8 @@ from .models import Gallery, ImageCategory
 
 class GalleryAdmin(admin.ModelAdmin):
     """The only Main class of Gallery Admin"""
-    list_display = ('label', 'date', 'tag')
-    list_filter = ('date', 'tag')
+    list_display = ('label', 'date', 'category')
+    list_filter = ('date', 'category')
 
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(ImageCategory)
