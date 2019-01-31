@@ -44,6 +44,7 @@ html, body  {
     color: black;
     font-family: 'Open Sans', sans-serif;
     font-size: 90%;
+    font-weight: 600;
 }
 
 .burger_icon:hover,

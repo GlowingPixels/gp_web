@@ -13,6 +13,7 @@
     vertical-align: top;
     width: 14%;
     margin: 0 5%;
+    font-family: 'Kreon', serif;
 }
 
 .details_sections_col h3 {
@@ -71,6 +72,19 @@
 @media screen and (max-width: 767px)    {
     .details_sections_col    {
         width: 90%;
+    }
+
+    .details_sections_col h3 {
+        font-size: 150%;
+    }
+
+    .details_sections_col ul li {
+        font-size: 150%;
+        margin-left: 25px;
+    }
+
+    .details_sections_col ul li a i {
+        opacity: 1;
     }
 
     .bottom_formalities {

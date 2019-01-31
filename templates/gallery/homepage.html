@@ -9,13 +9,56 @@
 
 {% block content %}
     <!-- css link -->
-    <link href="{% static "css/homepage.css" %}" rel="stylesheet">
+    <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
 
     <!-- search container -->
     <div class="search_home_container">
-        
+        <div class="intro_text">
+            <div class="text_line_1">BEST QUALITY IMAGES</div>
+            <div class="text_line_2">WITH</div>
+            <div class="text_line_3">LOWEST PRICE EVER</div>
+        </div>
+        <div class="search_bar">
+            <input type="text" placeholder="">
+            <button type="button">Search</button>
+        </div>
     </div>
 
+    <!-- img categories blocks -->
+    <div class="category_block_row">
+
+        <div class="category_block_col">
+           <a href="#">
+                <img src="{% static 'images/p1.jpg' %}" alt="image">
+           </a>
+        </div>
+        <div class="category_block_col">
+            <a href="#">
+                <img src="{% static 'images/p5.jpg' %}" alt="image">
+            </a>
+        </div>
+        <div class="category_block_col">
+            <a href="#">
+                <img src="{% static 'images/p4.jpg' %}" alt="image">
+            </a>
+        </div>
+        <div class="category_block_col">
+            <a href="#">
+                <img src="{% static 'images/p2.jpg' %}" alt="image">
+            </a>
+        </div>
+        <div class="category_block_col">
+            <a href="#">
+                <img src="{% static 'images/p4.jpg' %}" alt="image">
+            </a>
+        </div>
+        <div class="category_block_col">
+            <a href="#">
+                <img src="{% static 'images/login2.jpg' %}" alt="image">
+            </a>
+        </div>
+
+    </div>
 
 {% endblock %}
     
