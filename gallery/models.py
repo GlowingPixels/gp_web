@@ -66,7 +66,7 @@ class Image(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.label)
-        super(Gallery, self).save(*args, **kwargs)    
+        super(Image, self).save(*args, **kwargs)    
 
     def __str__(self):
         return "Image: " + str(self.category)
