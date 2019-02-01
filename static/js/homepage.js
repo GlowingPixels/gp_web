@@ -8,14 +8,9 @@ $(".search_bar").children("input").blur(function(){
     $(this).parent(".search_bar").css("border", "2px solid rgb(129, 129, 129)");
 });
 
-// code for img block ---------------------------------------------------
-//code that will run only on page reload
-// var categoryBlockWidth = $(".category_block_col").width();
-// console.log(categoryBlockWidth);
-// $(".category_block_col").css("height", String(categoryBlockWidth));
-// // code that will run on page resize
-// $(window).on('resize', function(){
-//     var categoryBlockWidth = $(".category_block_col").width();
-//     console.log(categoryBlockWidth);
-//     $(".category_block_col").css("height", String(categoryBlockWidth));    
-// });
+// code for hover effect on category block -------------------------------------
+$(".category_block_col").hover(function(){
+    $(this).children("a").children(".category_name").addClass("block_visiblity");
+}, function(){
+    $(this).children("a").children(".category_name").removeClass("block_visiblity");
+});
