@@ -26,55 +26,16 @@
 
     <!-- img categories blocks -->
     <div class="category_block_row">
-
+        {% for image in images %}
         <div class="category_block_col">
-           <a href="#">
-                <img src="{% static 'images/p1.jpg' %}" alt="image">
-                <div class="category_name">
-                    SPONGE BOB
-                </div>
-           </a>
+        <a href="{% url 'gallery:category' image.category %}">
+            <img src="{{ image.representative_image.thumbnail.url }}" alt="image">
+            <div class="category_name">
+                {{ image.category }}
+            </div>
+        </a>
         </div>
-        <div class="category_block_col">
-            <a href="#">
-                <img src="{% static 'images/p5.jpg' %}" alt="image">
-                <div class="category_name">
-                    FLOWER
-                </div>
-            </a>
-        </div>
-        <div class="category_block_col">
-            <a href="#">
-                <img src="{% static 'images/p4.jpg' %}" alt="image">
-                <div class="category_name">
-                    LAKE
-                </div>
-            </a>
-        </div>
-        <div class="category_block_col">
-            <a href="#">
-                <img src="{% static 'images/p2.jpg' %}" alt="image">
-                <div class="category_name">
-                    SPONGE BOB
-                </div>
-            </a>
-        </div>
-        <div class="category_block_col">
-            <a href="#">
-                <img src="{% static 'images/p4.jpg' %}" alt="image">
-                <div class="category_name">
-                    SPONGE BOB
-                </div>
-            </a>
-        </div>
-        <div class="category_block_col">
-            <a href="#">
-                <img src="{% static 'images/login2.jpg' %}" alt="image">
-                <div class="category_name">
-                    SPONGE BOB
-                </div>
-            </a>
-        </div>
+        {% endfor %}
 
     </div>
 

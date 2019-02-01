@@ -7,6 +7,7 @@ from datetime import datetime
 from django.db import models
 from stdimage import StdImageField
 from django.conf import settings
+from .compress import compress
 
 User = get_user_model()
 
@@ -14,11 +15,17 @@ class ImageCategory(models.Model):
     """Category class to categorize the images"""
 
     category = models.CharField(max_length=100)
+    representative_image = StdImageField(upload_to='category_images/', variations={'thumbnail': (786, 1048, True)}, blank=True)
 
     class Meta:
 
         verbose_name = "Image Category"
         verbose_name_plural = "Image Categories"
+
+    def save(self, *args, **kwargs):
+        representative_image = compress(self.representative_image)
+        self.representative_image = representative_image
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return str(self.category)

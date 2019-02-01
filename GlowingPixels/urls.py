@@ -19,7 +19,6 @@ from django.conf.urls.static import static
 from django.contrib.auth import views
 from django.contrib import admin
 from django.urls import path, include
-from gallery.views import gallery
 
 urlpatterns = [
     path('admin/', admin.site.urls),

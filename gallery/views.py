@@ -7,23 +7,25 @@ from django.views import View
 from .models import Image, ImageCategory
 from .forms import ImageCreateForm
 
-def gallery(req, category=None):
+def homepage(req):
     """
-    Default view that renders all the images
-    in a category
+    Default view that renders all category
     """
-    if(category != None):
-        category_obj = ImageCategory.objects.filter(category=category)
-        images = Image.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(category__in=category_obj)[:20]
-    else:
-        images = Image.objects.annotate(like_count=Count('likes')).order_by('-like_count')[:20]
+    images = ImageCategory.objects.all()
+    context = {
+            'images': images,
+       }
+    return render(req, 'gallery/homepage.html', context=context)
 
+def category_images(req, category):
+    category_obj = ImageCategory.objects.filter(category=category)
+    images = Image.objects.annotate(like_count=Count('likes')).order_by('-like_count').filter(category__in=category_obj)[:24]
     context = {
             'images': images,
             'category': category,
         }
-    return render(req, 'gallery/homepage.html', context=context)
-
+    return render(req, 'gallery/category.html', context=context) 
+    
 @login_required
 def create_image(request):
     if request.method == 'POST':
