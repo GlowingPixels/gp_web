@@ -1,6 +1,6 @@
 """Admin Class of Gallery App that implements filter by date of upload"""
 from django.contrib import admin
-from .models import Image, ImageCategory, Tag
+from .models import Image, ImageCategory, Tag, SubCategory
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -11,3 +11,4 @@ class ImageAdmin(admin.ModelAdmin):
 admin.site.register(Image, ImageAdmin)
 admin.site.register(ImageCategory)
 admin.site.register(Tag)
+admin.site.register(SubCategory)

@@ -30,6 +30,19 @@ class ImageCategory(models.Model):
     def __str__(self):
         return str(self.category)
 
+class SubCategory(models.Model):
+
+    parent =  models.ForeignKey(ImageCategory, on_delete=models.CASCADE, related_name='subcategory_list')
+    name = models.CharField(max_length=100)
+
+    class Meta:
+
+        verbose_name = "Sub-Category"
+        verbose_name_plural = "Sub-Categories"
+    
+    def __str__(self):
+        return str(self.name)
+
 class Tag(models.Model):
     """
     A collection of all tags of an image
