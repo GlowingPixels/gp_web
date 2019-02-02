@@ -52,8 +52,7 @@
     width: 18%;
     padding: 0;
     background: rgb(52, 163, 197);
-    background-image: linear-gradient(to top, rgb(33, 138, 170), rgb(52, 163, 197), rgb(91, 183, 211));
-    background-image: linear-gradient(to top, #0091ea, #40c4ff);
+    background-image: linear-gradient(to top, #1c9dc4, #40d2ff);
     border: none;
     font-size: 130%;
     border-radius: 6px;
