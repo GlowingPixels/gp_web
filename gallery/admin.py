@@ -4,11 +4,16 @@ from .models import Image, ImageCategory, Tag, SubCategory
 
 
 class ImageAdmin(admin.ModelAdmin):
-    """The only Main class of Gallery Admin"""
+
     list_display = ('label', 'date', 'category')
     list_filter = ('date', 'category')
 
+class SubCategoryAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'parent')
+    list_filter = ('parent',)
+    
 admin.site.register(Image, ImageAdmin)
 admin.site.register(ImageCategory)
 admin.site.register(Tag)
-admin.site.register(SubCategory)
+admin.site.register(SubCategory, SubCategoryAdmin)
