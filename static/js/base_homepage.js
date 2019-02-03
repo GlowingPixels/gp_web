@@ -26,3 +26,4 @@ $(".details_sections_col").children("ul").children("li").children("a").hover(fun
 },function(){
     $(this).children("i").css("opacity", "0");
 });
+

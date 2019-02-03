@@ -8,10 +8,10 @@
 </title>
 
 {% block content %}
-    <!-- css link -->
+    <!-- ------------------------------css link---------------------------------------- -->
     <link href="{% static 'css/homepage.css' %}" rel="stylesheet">
 
-    <!-- search container -->
+    <!-- ---------------------------search container------------------------------------ -->
     <div class="search_home_container">
         <div class="intro_text">
             <div class="text_line_1">BEST QUALITY IMAGES</div>
@@ -21,10 +21,29 @@
         <div class="search_bar">
             <input type="text" placeholder="">
             <button type="button">Search</button>
+            <div class="search_result">
+                <a href="#">
+                    <span>blah</span>
+                </a>
+                <a href="#">
+                    <span>blah</span>
+                </a>
+                <a href="#">
+                    <span>blah</span>
+                </a>
+                <a href="#">
+                    <span>blah</span>
+                </a>
+                <a href="#">
+                    <span>blah</span>
+                </a>
+            </div>
+
         </div>
+        
     </div>
 
-    <!-- img categories blocks -->
+    <!-- ----------------------------img categories block---------------------------------- -->
     <div class="category_block_row">
         {% for image in images %}
         <div class="category_block_col">

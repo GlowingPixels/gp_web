@@ -3,24 +3,25 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Glowing Pixels</title>
         <link rel="icon" href="{% static "images/icon.png" %}" type="image/x-icon">
-        <!-- CDN for font Awaesome -->
+        <!-- -----------------------CDN for font Awaesome------------------------------------ -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" 
         crossorigin="anonymous">
-        <!-- CDN for google font -->
+        <!-- ------------------------CDN for google font------------------------------------- -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
-        <!-- homepage CDNs of google-fonts -->
+        <!-- -----------------homepage CDNs of google-fonts---------------------------------- -->
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-        <!-- link for homepage css -->
+        <!-- --------------------link for homepage css--------------------------------------- -->
         <link rel="stylesheet" href="{% static 'css/base_homepage.css' %}">
     </head>
     <body>
-        <!-- ----------------navbar for the homepage--------------- -->
+        <!-- --------------------navbar for the homepage------------------------------------- -->
         <div class="homepage_navbar">
             <div class="burger_icon">
                 <i class="fas fa-bars"></i>
@@ -31,17 +32,25 @@
             <div class="nav_content">
 
                 {% if user.is_authenticated %}
-                    <a href="{% url 'users:profile' %}" class="side_line">
-                        {{ user.first_name }}
+                   
+                    <a href="{% url 'users:profile' %}" class="user_details">
+                        <div class="profile_image">
+                            <img src="../../static/images/p1.jpg" alt="image">
+                        </div>
+                        <span  class="user_name"> {{ user.first_name }}</span>
                     </a>
-                    <a href="{% url 'logout' %}">
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+
+                    <a href="{% url 'logout' %}"  class="side_line">
                         <span>Logout</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="side_line">
+                    <a href="{% url 'login' %}">
                         <span>Login</span>
                     </a>
-                    <a href="{% url 'users:signup' %}">
+                    <a href="{% url 'users:signup' %}"  class="side_line">
                         <span>Sign Up</span>
                     </a>
                 {% endif %}
@@ -49,7 +58,7 @@
             </div>
         </div>
 
-        <!-- --------------side bar that contains category----------------- -->
+        <!-- ----------------------side bar that contains category------------------------- -->
         <div class="category_side">
             <div class="category">
                 <span class="menu_heading">Image Categories</span>
@@ -72,17 +81,17 @@
 
     {% block content %}
 
-        <!-- awaesome content goes here (awaesome because its written by me) -->
+        <!-- -------awaesome content goes here (awaesome because its written by me)------ -->
 
     {% endblock %}
 
-    <!-- -----------------------footer----------------------------- -->
+    <!-- ----------------------------------footer----------------------------------------- -->
     {% include "base/footer.html" %}
 
-    <!-- links for the script tag -->
+    <!-------------------------- links for the script tag--------------------------------- -->
     {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- js file link -->
+    <!-- ---------------------------js file link------------------------------------------ -->
     <script src="{% static 'js/base_homepage.js' %}"></script>
     {% endblock %}
     </body>

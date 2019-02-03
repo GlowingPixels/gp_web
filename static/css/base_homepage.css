@@ -35,7 +35,7 @@ html, body  {
     display: inline;
     position: absolute;
     right: 10px;
-    top: 36%;
+    top: 20px;
 }
 
 .nav_content a  {
@@ -47,16 +47,41 @@ html, body  {
     font-weight: 600;
 }
 
+.profile_image  {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background: black;
+    margin-right: 3px;
+    vertical-align: middle;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile_image > img    {
+    max-width: 25px;
+    height: auto;
+}
+
 .burger_icon:hover,
 .nav_content > a:hover  {
     color: rgb(10, 177, 177);
 }
 
 .nav_content .side_line {
-    border-right: 2px solid black;
+    border-left: 2px solid black;
 }
 
 @media screen and (max-width: 767px)    {
+    .profile_image {
+        width: 20px;
+        height: 20px;
+    }
+
+    .profile_image > img    {
+        max-width: 20px;
+    }
+
     .burger_icon    {
         font-size: 130%;
     }
@@ -66,8 +91,16 @@ html, body  {
     }
 
     .nav_content    {
-        top: 38%;
+        top: 16px;
         font-size: 60%;
+    }
+
+    .nav_content > .user_details   {
+        padding: 0;
+    }
+
+    .user_name  {
+        display: none;
     }
 }
 

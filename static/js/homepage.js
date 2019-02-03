@@ -1,11 +1,11 @@
 console.log("homepage.js connected");
 
-// code for search area border and dropdown----------------------------
+// code for search area border and dropdown------------------------------------
 $(".search_bar").children("input").focus(function(){
-    $(this).parent(".search_bar").css("border", "2px solid rgb(10, 177, 177)");
+    $(this).siblings(".search_result").slideDown();
 });
 $(".search_bar").children("input").blur(function(){
-    $(this).parent(".search_bar").css("border", "2px solid rgb(129, 129, 129)");
+    $(this).siblings(".search_result").slideUp();
 });
 
 // code for hover effect on category block -------------------------------------
@@ -14,3 +14,10 @@ $(".category_block_col").hover(function(){
 }, function(){
     $(this).children("a").children(".category_name").removeClass("block_visiblity");
 });
+
+// code to disable dowload-------------------------------------------------------
+$(document).ready(function() {
+    $(".category_block_col").bind('cut copy paste', function (e) {
+     e.preventDefault();
+    });
+ });

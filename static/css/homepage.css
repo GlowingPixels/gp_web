@@ -4,6 +4,8 @@
     height: 400px;
     position: relative;
     background: white;
+    background-image: linear-gradient(to right, #43c6ac, #191654);
+    margin-bottom: 10px;
 }
 
 .intro_text {
@@ -16,10 +18,12 @@
 
 .text_line_2    {
     font-size: 120%;
+    color: beige;
 }
 
 .text_line_1, .text_line_3    {
     font-size: 200%;
+    color: beige;
 }
 
 .search_bar {
@@ -29,7 +33,7 @@
     top: 250px;
     width: 40%;
     margin: 0 auto;
-    border: 2px solid rgb(129, 129, 129);
+    border: 2px solid rgb(255, 255, 255);
     height: 50px;
     padding: 0 10px;
     border-radius: 10px;
@@ -62,6 +66,25 @@
     outline: none;
 }
 
+.search_result  {
+    background: white;
+    width: 75%;
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1;
+    display: none;
+}
+
+.search_result > a  {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
 @media screen and (max-width: 1100px)   {
     .search_bar {
         width: 60%;
@@ -91,7 +114,7 @@
 /* category block */
 .category_block_row {
     display: grid;
-    grid-template: repeat(3, 24.65vw) / repeat(4, 24.65vw);
+    grid-template: repeat(3, 24.78vw) / repeat(4, 24.78vw);
     width: 100%;
 }
 
@@ -103,28 +126,30 @@
 
 .category_block_col > a > img   {
     transition: 200ms ease;
-    width: 100%;
+    width: 100.25%;
     object-fit: fill;
 }
 
 .category_block_col:hover img {
     transform: scale(1.1);
+    filter: brightness(70%);
 } 
 
 .category_name  {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.247);
     font-size: 130%;
     color: white;
-    text-shadow: 0 0 2px rgb(133, 133, 133);
-    padding: 8px 0;
+    padding: 4px 10px;
     text-align: center;
-    display: none;
+    border-radius: 0 10px 10px 0;
+    left: -100%;
+    transition: 300ms;
 }
 
 .block_visiblity    {
-    display: block;
+    left: 0;
 }
 
 @media screen and (max-width: 1100px)   {
@@ -135,6 +160,6 @@
 
 @media screen and (max-width: 767px)   {
     .category_block_row {
-        grid-template: repeat(8, 50vw) / repeat(2, 50vw);
+        grid-template: repeat(6, 50vw) / repeat(2, 50vw);
     }
 }
