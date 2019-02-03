@@ -65,13 +65,12 @@
                 <ul class="category_list">
                 {% for category in categories %}
                     <li class="list_items"><span>{{ category }}</span>
+                        {% for sub in category.subcategory_list.all %}
                         <ul class="sub_category">
-                            <li><a href="">blah</a></li>
-                            <li><a href="">blah</a></li>
-                            <li><a href="">blah</a></li>
-                            <li><a href="">blah</a></li>
-                        </ul>
-                    </li>            
+                            <li><a href="">{{sub}}</a></li>
+                        </ul> 
+                        {% endfor %}
+                    </li>         
                 {% endfor %}
                 </ul>
             </div>
