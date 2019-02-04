@@ -91,7 +91,7 @@ html, body  {
     }
 
     .nav_content    {
-        top: 16px;
+        /* top: 16px; */
         font-size: 60%;
     }
 
