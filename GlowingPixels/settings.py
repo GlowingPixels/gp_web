@@ -26,7 +26,7 @@ SECRET_KEY = '4ds84++szt8y!yg!+#nr-*+_n*yd*d)y%wl=(i_n9-g4*t(&7z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.43.109", "127.0.0.1"]
+ALLOWED_HOSTS = ["192.168.43.109", "127.0.0.1", "192.168.96.76"]
 
 # Login Redirection
 LOGIN_URL = 'login'
