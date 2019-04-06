@@ -3,7 +3,8 @@
 * Maintainer and Architect.
    * ``Ritankar Paul``
    * ``Kripa Sindhu Bairagi``
-   
+   * ``Sounak Biswas``
+   * ``Ramyajit Choudhury``
 * Email:
    * ``ritankarpaul47@gmail.com``
    * ``kripabairagi0047@gmail.com``
